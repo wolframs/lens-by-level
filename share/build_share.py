@@ -47,19 +47,19 @@ body{margin:0;background:#777;font-family:var(--font);color:var(--ink)}
 .quote small{display:block;font-style:normal;font-family:var(--mono);font-size:17px;color:var(--ink-3);margin-top:8px}
 '''
 def card(n,body,sig='@wolframs91 · Lens by Level'):
-    return f'<section class="card" id="c{n}">{body}<div class="sig">{esc(sig)} · {n}/6</div></section>'
+    return f'<section class="card" id="c{n}">{body}</section>'
 # ---------- 1: a mock argument pointing at four objects
 c1='''
 <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:34px">
- <div><p class="who">reply 1</p><span class="bub a">“It’s just predicting the next token.”</span></div>
- <div style="text-align:right"><p class="who">reply 2</p><span class="bub u">“My 4o had a real personality.”</span></div>
+ <div><span class="bub a">“It’s just predicting the next token.”</span></div>
+ <div style="text-align:right"><span class="bub u">“My 4o had a real personality.”</span></div>
 </div>
 <p class="ttl" style="text-align:center">“Does it want anything?” is four questions wearing one sentence.</p>
 <div class="objs">
- <div class="obj"><h3>the trained model</h3><p>one set of weights, millions of chats</p><div class="mini"><div class="bar"><span style="width:110px">chat #1</span><i style="width:160px"></i></div><div class="bar"><span style="width:110px">chat #2</span><i style="width:120px"></i></div><div class="bar"><span style="width:110px">chat #3</span><i style="width:190px"></i></div><div class="bar"><span style="width:110px">…</span><i style="width:60px;opacity:.4"></i></div></div><span class="tag">reply 2 is about this</span></div>
- <div class="obj"><h3>one conversation</h3><p>everything said so far</p><div class="mini"><span class="m u">hey, rough day</span><span class="m a">want to talk about it?</span><span class="m u">it’s my sister again</span><span class="m a">last time you said…</span></div><span class="tag">or about this</span></div>
+ <div class="obj"><h3>the trained model</h3><p>one set of weights, millions of chats</p><div class="mini"><div class="bar"><span style="width:110px">chat #1</span><i style="width:160px"></i></div><div class="bar"><span style="width:110px">chat #2</span><i style="width:120px"></i></div><div class="bar"><span style="width:110px">chat #3</span><i style="width:190px"></i></div><div class="bar"><span style="width:110px">…</span><i style="width:60px;opacity:.4"></i></div></div><span class="tag">“personality” → here</span></div>
+ <div class="obj"><h3>one conversation</h3><p>everything said so far</p><div class="mini"><span class="m u">hey, rough day</span><span class="m a">want to talk about it?</span><span class="m u">it’s my sister again</span><span class="m a">last time you said…</span></div><span class="tag">or here</span></div>
  <div class="obj"><h3>one reply</h3><p>one answer, hundreds of steps</p><div class="mini"><span class="m a" style="max-width:100%">A bicycle is a simple yet efficient mode of transportation that allows…</span></div><span class="tag" style="visibility:hidden">x</span></div>
- <div class="obj"><h3>one step</h3><p>the odds of the next word</p><div class="mini"><div class="bar"><span style="width:60px">the</span><i style="width:150px"></i>0.41</div><div class="bar"><span style="width:60px">a</span><i style="width:80px"></i>0.22</div><div class="bar"><span style="width:60px">my</span><i style="width:34px"></i>0.09</div><div class="bar"><span style="width:60px">…</span><i style="width:20px;opacity:.4"></i></div></div><span class="tag">reply 1 is about this</span></div>
+ <div class="obj"><h3>one step</h3><p>the odds of the next word</p><div class="mini"><div class="bar"><span style="width:60px">the</span><i style="width:150px"></i>0.41</div><div class="bar"><span style="width:60px">a</span><i style="width:80px"></i>0.22</div><div class="bar"><span style="width:60px">my</span><i style="width:34px"></i>0.09</div><div class="bar"><span style="width:60px">…</span><i style="width:20px;opacity:.4"></i></div></div><span class="tag">“next token” → here</span></div>
 </div>'''
 # ---------- 3: two cells blown up over the dimmed board
 c3='''
