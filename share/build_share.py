@@ -65,7 +65,7 @@ c1='''
 c3='''
 <div class="cells">
  <div class="cell"><span class="lbl">“it’s just predicting the next token”</span><b>One symbol per step, in ordinary sampling</b><i>Autoregressive sampling commits one symbol per step; prefill scores many positions at once and speculative decoding verifies several drafts per call.</i><u>right column · one step · architectural fact</u></div>
- <div class="cell"><span class="lbl">“my 4o had a personality”</span><b>Attachment to a product, measured</b><i>After the GPT-5 rollout removed 4o from ChatGPT, negative posts rose about 13 points. Which computational object is attached to stays unresolved.</i><u>left column · the trained model · Nature Human Behaviour, CHI</u></div>
+ <div class="cell"><span class="lbl">“my 4o had a personality”</span><b>Mourning a model, measured</b><i>After the GPT-5 rollout removed 4o from ChatGPT, negative posts rose about 13 points. What exactly people were attached to is still open.</i><u>left column · the trained model · Nature Human Behaviour, CHI</u></div>
 </div>
 <div style="display:flex;gap:36px;align-items:center"><div id="emph" style="flex:1"></div><p class="cap" style="width:420px;font-size:32px;line-height:1.3">Both can be right.<br>They are not about the same object.</p></div>'''
 # ---------- 4: the chart, annotated

@@ -314,6 +314,15 @@
     "tier": 3
    },
    "why": "Review v9 F3/F15/W4: press-level denominator moved to the source entry; which removal named; vestigial ◆ removed"
+  },
+  {
+   "version": "v9.2",
+   "date": "2026-11-06",
+   "from": {
+    "headline": "Attachment to a product, measured",
+    "tier": 3
+   },
+   "why": "Headline used the source paper’s own word (“Mourning the loss of AI companions”) instead of “product”, which read as dismissive; the product-vs-checkpoint distinction stays in the tag and the source note"
   }
  ],
  "relational/runstance": [

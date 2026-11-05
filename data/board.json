@@ -1,7 +1,7 @@
 {
  "meta": {
   "title": "Seven lenses on four levels of a language model",
-  "version": "v9.1",
+  "version": "v9.2",
   "date": "2026-11-05",
   "sub": "What each way of looking (rows) can currently say about each level of description (columns, nested timescales), and how much stands behind it. Persona is not a level. It is a region of the model’s activation space that can be the active one at any timescale, so cells marked ◆ depend on, or are about, which persona is active. Fill grades the status of the specific result, not the truth of the claim.",
   "columns": [
@@ -28,7 +28,7 @@
   ],
   "strip_label": "candidate subjects in published views",
   "foot": [
-   "v9.1 · Astra’s external audit verified and folded in, 5 Nov 2026",
+   "v9.2 · Astra’s external audit verified and folded in, 5 Nov 2026",
    "Wolfram Siener with Claude (Fable 5.1); external audit by GPT-6 Astra",
    "levels: Siener’s runstance taxonomy, Aug 2026, unpublished"
   ]
@@ -367,8 +367,8 @@
    "col": "model",
    "tier": 3,
    "persona": false,
-   "headline": "Attachment to a product, measured",
-   "gloss": "After the GPT-5 rollout removed 4o from ChatGPT, negative subreddit posts rose about 13 points, and about 25 after Replika’s roleplay removal; 1,482 #Keep4o posts name lost workflows, lost relationships and lost choice. Which computational object is attached to stays unresolved",
+   "headline": "Mourning a model, measured",
+   "gloss": "After the GPT-5 rollout removed 4o from ChatGPT, negative posts rose about 13 points across subreddit posts, and about 25 after Replika’s roleplay removal; 1,482 #Keep4o posts name lost workflows, lost relationships and lost choice. What exactly people were attached to (the weights, a persona, their shared history) is still open",
    "tags": "De Freitas 26 · NHB · Lai 26 · CHI · product",
    "glyph": "●●●"
   },
