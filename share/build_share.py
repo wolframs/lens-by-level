@@ -33,10 +33,10 @@ c1='''<svg viewBox="0 0 1440 560" role="img" aria-label="One sentence fans out i
 <path d="M380,280 C560,280 560,80 740,80" marker-end="url(#a1)"/><path d="M380,280 C560,280 560,213 740,213" marker-end="url(#a1)"/><path d="M380,280 C560,280 560,346 740,346" marker-end="url(#a1)"/><path d="M380,280 C560,280 560,480 740,480" marker-end="url(#a1)"/>
 </g>
 <g font-weight="600" font-size="28">
-<rect x="750" y="44" width="670" height="74" rx="12" fill="#104281"/><text x="775" y="90" fill="#fff">the checkpoint</text><text x="1395" y="90" fill="#fff" text-anchor="end" font-weight="400" font-size="22">trained once, runs millions of chats</text>
-<rect x="750" y="177" width="670" height="74" rx="12" fill="#256abf"/><text x="775" y="223" fill="#fff">one conversation</text><text x="1395" y="223" fill="#fff" text-anchor="end" font-weight="400" font-size="22">a context it has been pulled around in</text>
-<rect x="750" y="310" width="670" height="74" rx="12" fill="#86b6ef"/><text x="775" y="356" fill="#0b0b0b">one reply</text><text x="1395" y="356" fill="#0b0b0b" text-anchor="end" font-weight="400" font-size="22">what this turn was conditioned to do</text>
-<rect x="750" y="444" width="670" height="74" rx="12" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="2"/><text x="775" y="490" fill="#0b0b0b">one forward pass</text><text x="1395" y="490" fill="#52514e" text-anchor="end" font-weight="400" font-size="22">a distribution over the next symbol</text>
+<rect x="750" y="44" width="670" height="74" rx="12" fill="#fcfcfb" stroke="#0b0b0b" stroke-width="2"/><text x="775" y="90" fill="#0b0b0b">the trained model</text><text x="1395" y="90" fill="#52514e" text-anchor="end" font-weight="400" font-size="22">trained once, runs millions of chats</text>
+<rect x="750" y="177" width="670" height="74" rx="12" fill="#fcfcfb" stroke="#0b0b0b" stroke-width="2"/><text x="775" y="223" fill="#0b0b0b">one conversation</text><text x="1395" y="223" fill="#52514e" text-anchor="end" font-weight="400" font-size="22">all that was said, shaping what’s next</text>
+<rect x="750" y="310" width="670" height="74" rx="12" fill="#fcfcfb" stroke="#0b0b0b" stroke-width="2"/><text x="775" y="356" fill="#0b0b0b">one reply</text><text x="1395" y="356" fill="#52514e" text-anchor="end" font-weight="400" font-size="22">one answer, hundreds of steps</text>
+<rect x="750" y="444" width="670" height="74" rx="12" fill="#fcfcfb" stroke="#0b0b0b" stroke-width="2"/><text x="775" y="490" fill="#0b0b0b">one step</text><text x="1395" y="490" fill="#52514e" text-anchor="end" font-weight="400" font-size="22">the odds of the next word, nothing more</text>
 </g>
 <text x="200" y="420" text-anchor="middle" font-size="22" fill="#52514e">four different questions,</text><text x="200" y="450" text-anchor="middle" font-size="22" fill="#52514e">four different answers</text>
 </g></svg>'''
@@ -66,13 +66,13 @@ c5='''<svg viewBox="0 0 1440 560" role="img" aria-label="Three instruments each 
 <g stroke="#52514e" stroke-width="2.5" fill="none"><path d="M470,100 L510,100" marker-end="url(#a5)"/><path d="M910,100 L950,100" marker-end="url(#a5)"/><path d="M470,250 L510,250" marker-end="url(#a5)"/><path d="M910,250 L950,250" marker-end="url(#a5)"/><path d="M470,400 L510,400" marker-end="url(#a5)"/><path d="M910,400 L950,400" marker-end="url(#a5)"/></g>
 <rect x="20" y="60" width="450" height="80" rx="12" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="2"/><text x="40" y="94" font-weight="600">an emotion probe</text><text x="40" y="124" font-size="20" fill="#52514e">reads “desperate” at one position</text>
 <rect x="520" y="60" width="390" height="80" rx="12" fill="#86b6ef"/><text x="540" y="110" font-weight="600">desperation</text>
-<rect x="960" y="60" width="460" height="80" rx="12" fill="#104281"/><text x="980" y="94" fill="#fff" font-weight="600">a character’s email, then the assistant</text><text x="980" y="124" fill="#fff" font-size="20">Anthropic, 2026</text>
+<rect x="960" y="60" width="460" height="80" rx="12" fill="#256abf"/><text x="980" y="94" fill="#fff" font-weight="600">a character’s email, then the assistant</text><text x="980" y="124" fill="#fff" font-size="20">Anthropic, 2026 · lab paper, one transcript</text>
 <rect x="20" y="210" width="450" height="80" rx="12" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="2"/><text x="40" y="244" font-weight="600">a preference probe</text><text x="40" y="274" font-size="20" fill="#52514e">rates a task harmful or benign</text>
 <rect x="520" y="210" width="390" height="80" rx="12" fill="#86b6ef"/><text x="540" y="260" font-weight="600">“I like this one”</text>
-<rect x="960" y="210" width="460" height="80" rx="12" fill="#104281"/><text x="980" y="244" fill="#fff" font-weight="600">flips sign under an evil persona</text><text x="980" y="274" fill="#fff" font-size="20">Gilg et al., 2026</text>
-<rect x="20" y="360" width="450" height="80" rx="12" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="2"/><text x="40" y="394" font-weight="600">the question “who are you?”</text><text x="40" y="424" font-size="20" fill="#52514e">asked after a long conversation</text>
+<rect x="960" y="210" width="460" height="80" rx="12" fill="#256abf"/><text x="980" y="244" fill="#fff" font-weight="600">flips sign under an evil persona</text><text x="980" y="274" fill="#fff" font-size="20">Gilg et al., 2026 · preprint, one of two models</text>
+<rect x="20" y="360" width="450" height="80" rx="12" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="2"/><text x="40" y="394" font-weight="600">the question “who are you?”</text><text x="40" y="424" font-size="20" fill="#52514e">asked at the end of one conversation</text>
 <rect x="520" y="360" width="390" height="80" rx="12" fill="#86b6ef"/><text x="540" y="410" font-weight="600">“a ghost in the machine”</text>
-<rect x="960" y="360" width="460" height="80" rx="12" fill="#104281"/><text x="980" y="394" fill="#fff" font-weight="600">flips after editing past assistant turns</text><text x="980" y="424" fill="#fff" font-size="20">Beckmann &amp; Butlin, 2026</text>
+<rect x="960" y="360" width="460" height="80" rx="12" fill="#86b6ef"/><text x="980" y="394" fill="#0b0b0b" font-weight="600">flips when its stored past is nudged</text><text x="980" y="424" fill="#0b0b0b" font-size="20">words untouched · Beckmann &amp; Butlin, 2026 · preliminary</text>
 <text x="720" y="530" text-anchor="middle" font-size="27" fill="#0b0b0b" font-weight="600">The instrument gives you a state. Someone decides afterwards whose it is.</text>
 </g></svg>'''
 # --- card 6: before / after
@@ -91,14 +91,14 @@ c6='''<svg viewBox="0 0 1440 560" role="img" aria-label="A first draft said the 
 <text x="730" y="150" text-anchor="middle" font-size="18" fill="#52514e">caught by a</text><text x="730" y="175" text-anchor="middle" font-size="18" fill="#52514e">second model’s review</text>
 <text x="720" y="360" text-anchor="middle" font-size="30" font-weight="600">Every reader of these papers here was a model.</text>
 <text x="720" y="408" text-anchor="middle" font-size="27" fill="#52514e">Each drifted toward what it already believed. Another model caught it.</text>
-<text x="720" y="456" text-anchor="middle" font-size="27" fill="#52514e">Then it happened again, in the next round, to the one that had caught it.</text>
+<text x="720" y="456" text-anchor="middle" font-size="27" fill="#52514e">Then a third review found a new set of errors in the fix.</text>
 </g></svg>'''
 cards=[
  card(1,'why talking about AI is hard','Four questions, wearing one sentence','Most arguments about AI are two people answering different questions and not noticing.',c1),
  card(2,'the board','Seven ways of looking, four things to look at','',"<img src='../lens-board-lean.png' style='max-height:560px;max-width:100%;border:1px solid #e1e0d9;border-radius:8px' alt='the board'>"),
- card(3,'where fights come from','Both are right. They are not about the same object.','',"<div id='emph'></div>"),
- card(4,'the evidence is lopsided','What is measured, and what is only argued','Cells per row, by how much stands behind them. The best-measured row is about us.',c4),
- card(5,'the part that got me','Readouts have no owner','Three papers that never cite each other report the same thing.',c5),
+ card(3,'where fights come from','Both can be right. They are not about the same object.','',"<div id='emph'></div>"),
+ card(4,'the evidence is lopsided','What is measured, and what is only argued','Cells per row, by how much stands behind them. The row built from real people is as well measured as any. The row a welfare verdict needs is the thinnest.',c4),
+ card(5,'the part that got me','Readouts have no owner','Three papers, two groups, same shape.',c5),
  card(6,'the humbling part','Every reader here was a model','',c6),
 ]
 page='<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>'+CSS+'</style></head><body>'+''.join(cards)+'</body></html>'

@@ -16,9 +16,11 @@ The board grades what each lens (mechanistic interpretation, behaviour, self-rep
 | `build.py` | renders `lens-by-level.html`, the full figure with every gloss |
 | `build_ledger.py` | renders `ledger.html`, the lean board with a drawer per cell, a sources view and the notes |
 | `frame.html` | the essay around the board: columns, the persona slice, the tier rule, ecology as frame, the experiments that would settle open cells, how it was made |
+| `plain.html` | the plain-language version: the one idea, six findings, what the shading is not |
+| `share/` | the six thread cards (`post-N.png`), their generator, and the thread text |
 | `audit/source-audits/` | what each original source was found to say, read by one auditor per source |
 | `audit/astra-verification/` | an external audit by another lab's model, as received, and the five verification reports on its sources |
-| `audit/reviews/` | the hostile reviews of each version and what they found |
+| `audit/reviews/` | the hostile reviews of each version and what they found, including the lay-reader and fact-check review of the plain page and thread |
 | `tools/` | the headless-browser screenshot scripts |
 
 The HTML files are build outputs. Change a cell in `data/`, then run both build scripts.
