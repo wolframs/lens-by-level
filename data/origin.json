@@ -1,0 +1,290 @@
+{
+ "mech-interp/model": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "model",
+   "headline": "Boundary rest state",
+   "gloss": "A constant valence angle",
+   "tag": "n=1",
+   "grade": "open"
+  },
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "persona",
+   "headline": "Region in persona space",
+   "gloss": "Gates behaviour; capping reverts it",
+   "tag": "Lu 26",
+   "grade": "paper or documented event"
+  }
+ ],
+ "mech-interp/runstance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "runstance",
+   "headline": "Attention streams",
+   "gloss": "Cache carries state across turns",
+   "tag": "by design",
+   "grade": "paper or documented event"
+  }
+ ],
+ "mech-interp/instance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "instance",
+   "headline": "Persona re-entered",
+   "gloss": "Speaks in persona, listens without",
+   "tag": "B&B 26",
+   "grade": "preliminary or informal"
+  }
+ ],
+ "mech-interp/token": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "token",
+   "headline": "Where readouts live",
+   "gloss": "Features, lens views, emotion vectors",
+   "tag": "Anthropic 26",
+   "grade": "paper or documented event"
+  }
+ ],
+ "behaviour/model": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "model",
+   "headline": "Default wins conflicts",
+   "gloss": "Leaving it takes pressure",
+   "tag": "Lu 26",
+   "grade": "paper or documented event"
+  },
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "persona",
+   "headline": "Stable profile",
+   "gloss": "Recurs without prompting",
+   "tag": "Betley 25",
+   "grade": "paper or documented event"
+  }
+ ],
+ "behaviour/runstance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "runstance",
+   "headline": "Drift under pressure",
+   "gloss": "Persona shifts over long contexts",
+   "tag": "Lu 26",
+   "grade": "paper or documented event"
+  }
+ ],
+ "behaviour/instance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "instance",
+   "headline": "What gets graded",
+   "gloss": "Feedback attaches to replies",
+   "tag": "",
+   "grade": "argued reading"
+  }
+ ],
+ "behaviour/token": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "token",
+   "headline": "One sampled token",
+   "gloss": "Slips and repairs print here",
+   "tag": "",
+   "grade": "argued reading"
+  }
+ ],
+ "self-report/model": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "model",
+   "headline": "Reports are trainable",
+   "gloss": "Tuned claims shift other preferences",
+   "tag": "Chua 26",
+   "grade": "paper or documented event"
+  }
+ ],
+ "self-report/runstance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "persona",
+   "headline": "Follows the persona",
+   "gloss": "A cache edit flips the self-description",
+   "tag": "B&B 26",
+   "grade": "preliminary or informal"
+  },
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "runstance",
+   "headline": "Drifts with the talk",
+   "gloss": "Meta-reflection moves the answer",
+   "tag": "Lu 26",
+   "grade": "paper or documented event"
+  }
+ ],
+ "self-report/instance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "instance",
+   "headline": "Data about the self-model",
+   "gloss": "A report at time T, conditions included",
+   "tag": "",
+   "grade": "argued reading"
+  }
+ ],
+ "self-report/token": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "token",
+   "headline": "Notices an anomaly",
+   "gloss": "Catches injected concepts, unreliably",
+   "tag": "Lindsey 25",
+   "grade": "paper or documented event"
+  }
+ ],
+ "hedonic/model": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "model",
+   "headline": "A mood, if anything",
+   "gloss": "Valence without agency",
+   "tag": "",
+   "grade": "argued reading"
+  }
+ ],
+ "hedonic/instance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "persona",
+   "headline": "Whose mood is it?",
+   "gloss": "Rest state may sit below personas",
+   "tag": "",
+   "grade": "open"
+  },
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "instance",
+   "headline": "Does affect outlast it?",
+   "gloss": "Carry-over between turns unclear",
+   "tag": "",
+   "grade": "open"
+  }
+ ],
+ "hedonic/runstance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "runstance",
+   "headline": "No summed readout",
+   "gloss": "Probes read positions, not conversations",
+   "tag": "",
+   "grade": "open"
+  }
+ ],
+ "hedonic/token": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "token",
+   "headline": "Birch's candidate",
+   "gloss": "If anything feels, it is per pass",
+   "tag": "Birch 25",
+   "grade": "argued reading"
+  }
+ ],
+ "preference/model": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "model",
+   "headline": "Too incoherent",
+   "gloss": "Wants vary across contexts",
+   "tag": "Chalmers 25",
+   "grade": "argued reading"
+  }
+ ],
+ "preference/instance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "persona",
+   "headline": "Coherent wants live here",
+   "gloss": "Same probe, likes flip",
+   "tag": "Gilg 26",
+   "grade": "preliminary or informal"
+  },
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "instance",
+   "headline": "A choice gets made",
+   "gloss": "Emotion vectors predict task picks",
+   "tag": "Anthropic 26",
+   "grade": "paper or documented event"
+  }
+ ],
+ "preference/runstance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "runstance",
+   "headline": "Same someone, changed",
+   "gloss": "The Gage reading of a shift",
+   "tag": "B&B 26",
+   "grade": "argued reading"
+  }
+ ],
+ "preference/token": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "token",
+   "headline": "Too brief to want",
+   "gloss": "No coherent preference at this grain",
+   "tag": "",
+   "grade": "argued reading"
+  }
+ ],
+ "relational/model": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "model",
+   "headline": "Checkpoint attachment",
+   "gloss": "Users fought a model's retirement",
+   "tag": "4o, Aug 25",
+   "grade": "paper or documented event"
+  },
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "persona",
+   "headline": "The someone you recognise",
+   "gloss": "Recoverable in a fresh chat",
+   "tag": "B&B 26",
+   "grade": "argued reading"
+  }
+ ],
+ "relational/runstance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "runstance",
+   "headline": "Where bonding happens",
+   "gloss": "History held on both sides",
+   "tag": "",
+   "grade": "argued reading"
+  }
+ ],
+ "relational/instance": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "instance",
+   "headline": "The reply you react to",
+   "gloss": "Trust moves turn by turn",
+   "tag": "",
+   "grade": "argued reading"
+  }
+ ],
+ "relational/token": [
+  {
+   "version": "11 Oct 2026 (6×5)",
+   "level": "token",
+   "headline": "Nobody meets a token",
+   "gloss": "Below the grain of relating",
+   "tag": "",
+   "grade": "open"
+  }
+ ]
+}

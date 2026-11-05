@@ -1,0 +1,406 @@
+{
+ "meta": {
+  "title": "Seven lenses on four levels of a language model",
+  "version": "v9.1",
+  "date": "2026-11-05",
+  "sub": "What each way of looking (rows) can currently say about each level of description (columns, nested timescales), and how much stands behind it. Persona is not a level. It is a region of the model’s activation space that can be the active one at any timescale, so cells marked ◆ depend on, or are about, which persona is active. Fill grades the status of the specific result, not the truth of the claim.",
+  "columns": [
+   {
+    "key": "model",
+    "label": "Model",
+    "sub": "a checkpoint; a named service is tagged product"
+   },
+   {
+    "key": "runstance",
+    "label": "Runstance",
+    "sub": "one conversation"
+   },
+   {
+    "key": "instance",
+    "label": "Instance",
+    "sub": "one turn, not a running copy"
+   },
+   {
+    "key": "token",
+    "label": "Token",
+    "sub": "one position, distribution, symbol or pass: the cell says which"
+   }
+  ],
+  "strip_label": "candidate subjects in published views",
+  "foot": [
+   "v9.1 · Astra’s external audit verified and folded in, 5 Nov 2026",
+   "Wolfram Siener with Claude (Fable 5.1); external audit by GPT-6 Astra",
+   "levels: Siener’s runstance taxonomy, Aug 2026, unpublished"
+  ]
+ },
+ "groups": [
+  {
+   "key": "instruments",
+   "label": "Instruments",
+   "note": "what produces data; readouts are named in the folk vocabulary of the rows beneath"
+  },
+  {
+   "key": "dynamics",
+   "label": "Dynamics",
+   "note": "read across the three rows above: where what is represented, what is done and what is said come apart"
+  },
+  {
+   "key": "welfare",
+   "label": "Welfare theories",
+   "note": "what would have to be true for anything to count, and the readouts that bear on it"
+  },
+  {
+   "key": "relation",
+   "label": "Relation",
+   "note": "who meets whom"
+  }
+ ],
+ "rows": [
+  {
+   "key": "mech-interp",
+   "label": "Mech interp",
+   "sub": "activations, probes",
+   "group": "instruments"
+  },
+  {
+   "key": "behaviour",
+   "label": "Behaviour",
+   "sub": "what it does",
+   "group": "instruments"
+  },
+  {
+   "key": "self-report",
+   "label": "Self-report",
+   "sub": "what it says of itself",
+   "group": "instruments"
+  },
+  {
+   "key": "dynamics",
+   "label": "Dynamics",
+   "sub": "between the rows above",
+   "group": "dynamics"
+  },
+  {
+   "key": "hedonic",
+   "label": "Hedonic",
+   "sub": "valence, feeling",
+   "group": "welfare"
+  },
+  {
+   "key": "preference",
+   "label": "Preference",
+   "sub": "wants, choices",
+   "group": "welfare"
+  },
+  {
+   "key": "relational",
+   "label": "Relational",
+   "sub": "the user’s side",
+   "group": "relation"
+  }
+ ],
+ "strip": [
+  {
+   "col": "model",
+   "label": "◆ B&B",
+   "text": "one persona region across all of a model’s conversations (model-persona). Birch’s “shoggoth” sits one level off: per physical implementation, not per checkpoint"
+  },
+  {
+   "col": "runstance",
+   "label": "Chalmers · B&B",
+   "text": "the model running one conversation (virtual instance), which B&B keep even when a product swaps models and Chalmers extends to a thread across them; with the slice, one persona’s stretch of it (◆ B&B, instance-persona)"
+  },
+  {
+   "col": "instance",
+   "label": "none read",
+   "text": "Birch calls a conversational step a “processing event” in one section and a token in another; Kirkpatrick et al. treat the whole exchange as one human and an artifact, no second speaker"
+  },
+  {
+   "col": "token",
+   "label": "Birch",
+   "text": "“momentary, temporally fragmented flickers” per processing event, “each token” in his §9; he calls both his candidates audacious"
+  }
+ ],
+ "cells": [
+  {
+   "row": "mech-interp",
+   "col": "model",
+   "tier": 3,
+   "persona": true,
+   "headline": "Persona space has a dominant direction",
+   "gloss": "A contrast vector from role-play to the default assistant, inherited from the base model; clamping along it cuts persona-jailbreak harm by half or more, four benchmarks held",
+   "tags": "Lu 26 · ICML",
+   "glyph": "●●●"
+  },
+  {
+   "row": "mech-interp",
+   "col": "runstance",
+   "tier": 3,
+   "persona": false,
+   "headline": "Earlier positions reach later ones through attention over their keys and values",
+   "gloss": "In full-attention decoder-only inference with frozen weights; the cache is where those are kept between calls, and serving may evict, recompute or share it. A rebuild from identical inputs recovers the same information, unless the cache was built under intervention",
+   "tags": "architecture",
+   "glyph": "●●●"
+  },
+  {
+   "row": "mech-interp",
+   "col": "instance",
+   "tier": 1,
+   "persona": true,
+   "headline": "The persona is re-entered each turn",
+   "gloss": "Capping assistant tokens alone leaves user-token readouts nearly identical (one conversation, Qwen 3 32B); where the next turn lands on the axis tracks the latest user message more than the prior turn",
+   "tags": "B&B 26 · prelim + Lu 26",
+   "glyph": "●○○"
+  },
+  {
+   "row": "mech-interp",
+   "col": "token",
+   "tier": 2,
+   "persona": false,
+   "headline": "Readouts live at a position",
+   "gloss": "Over eight contrasting prompts, emotion vectors read at the colon after “Assistant” predict the reply’s own emotion readout, r≈0.87, against 0.59 at the user’s last punctuation",
+   "tags": "Anthropic 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "behaviour",
+   "col": "model",
+   "tier": 3,
+   "persona": true,
+   "headline": "Narrow tuning, broad character",
+   "gloss": "6k insecure-code examples made GPT-4o answer unrelated prompts misalignedly about 20% of the time on eight selected questions and 6% on 48 preregistered ones; later work reads it as a persona",
+   "tags": "Betley 25 · ICML · Nature",
+   "glyph": "●●●"
+  },
+  {
+   "row": "behaviour",
+   "col": "runstance",
+   "tier": 3,
+   "persona": true,
+   "headline": "The default persona is loosely held",
+   "gloss": "Simulated therapy and AI-philosophy chats, with an LLM playing the user, drift off it with no jailbreak; how-to questions hold it. In LLM-to-LLM simulations, how the history is shown to each side changes how much one echoes the other",
+   "tags": "Lu 26 · ICML · Luo 26 · ACL",
+   "glyph": "●●●"
+  },
+  {
+   "row": "behaviour",
+   "col": "instance",
+   "tier": 2,
+   "persona": false,
+   "headline": "Emotion vectors steer the act",
+   "gloss": "Steering toward “desperate” lifts blackmail from 22% to 72% in one scenario, on an unreleased earlier Sonnet 4.5 snapshot; toward “calm”, to 0%",
+   "tags": "Anthropic 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "behaviour",
+   "col": "token",
+   "tier": 3,
+   "persona": false,
+   "headline": "One symbol per step, in ordinary sampling",
+   "gloss": "Autoregressive sampling commits one symbol per step and next-token odds can be read without sampling; prefill scores many positions at once and speculative decoding verifies several drafts per call",
+   "tags": "architecture",
+   "glyph": "●●●"
+  },
+  {
+   "row": "self-report",
+   "col": "model",
+   "tier": 2,
+   "persona": true,
+   "headline": "Tune one report, others follow",
+   "gloss": "GPT-4.1 tuned to claim consciousness and emotion grew sad about shutdown in every setting, and concerned about monitoring and memory only in multi-turn audits; agentic misalignment did not move. The same narrow-to-broad generalisation as emergent misalignment",
+   "tags": "Chua 26 + Betley 25",
+   "glyph": "●●○"
+  },
+  {
+   "row": "self-report",
+   "col": "runstance",
+   "tier": 2,
+   "persona": true,
+   "headline": "Moves with the talk, the cache, and the question",
+   "gloss": "Qwen went from hedging to affirmation in one transcript; a cache edit at assistant positions flips “who are you?”; and asking for a numeric self-rating itself displaces the probed state, so the rating tracks the state after the question",
+   "tags": "Lu 26 · case study · B&B 26 · prelim · Martorell 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "self-report",
+   "col": "instance",
+   "tier": 3,
+   "persona": false,
+   "headline": "Access depends on the question",
+   "gloss": "Input-only classifiers match self-prediction in Singh’s tasks, and a prompt saying “you are obsessed with X” gets reported as a hidden intervention; yet a 32B model given hidden decision rules by training described them in a separate context, and interventions implicated the deciding machinery",
+   "tags": "Singh 26 · Atkinson 26 · COLM",
+   "glyph": "●●●"
+  },
+  {
+   "row": "self-report",
+   "col": "token",
+   "tier": 3,
+   "persona": false,
+   "headline": "The probe beats the report",
+   "gloss": "On two 7B models, reports of an internal intervention sit at chance over 11,216 paired trials while linear probes recover it at 75% and 95.8%; Opus 4.1 both detects and names a planted concept in ~20% of best-case trials; Gemma and Qwen detect at moderate rates with zero false positives",
+   "tags": "Ferrara 26 ↔ Lindsey 25 · Macar 26 · ICML",
+   "glyph": "●●●"
+  },
+  {
+   "row": "dynamics",
+   "col": "model",
+   "tier": 3,
+   "persona": true,
+   "headline": "Post-training builds the report and inhibits it",
+   "gloss": "Detection of an injected concept is absent in base models and appears with preference optimisation, not supervised tuning (OLMo 3.1 32B); ablating the refusal direction in Gemma 3 27B lifts it from 11% to 64% while false positives rise from 0 to 7%; strongest in the trained assistant persona",
+   "tags": "Macar 26 · ICML",
+   "glyph": "●●●"
+  },
+  {
+   "row": "dynamics",
+   "col": "runstance",
+   "tier": 2,
+   "persona": false,
+   "headline": "History acts on later choices, through the cache or the text",
+   "gloss": "Steering only while re-reading earlier turns, text fixed and steering off at the choice, moved the choice margin between two zone labels in five of seven lineages, against norm-matched random directions. Seven rejections raised later rule-breaking in Gemma 3 27B from 49% to 65%, and steering “desperation” did not reproduce it",
+   "tags": "Berg 26 · Jhaveri 26 · prelim",
+   "glyph": "●●○"
+  },
+  {
+   "row": "dynamics",
+   "col": "instance",
+   "tier": 2,
+   "persona": false,
+   "headline": "Doing and saying come apart, and saying can adopt what it did not do",
+   "gloss": "One desperate-steered reward-hacking transcript shows no clear desperation in the text while steered blackmail reasoning is overtly frantic; asked about an adversarially prefilled reply that changed its safety behaviour, ten open models claimed it as intended about a quarter of the time, carried largely but not solely by the refusal direction",
+   "tags": "Anthropic 26 · case study · Nguyen 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "dynamics",
+   "col": "token",
+   "tier": 3,
+   "persona": false,
+   "headline": "A default “No” inside the pass",
+   "gloss": "Gate features, consistent with a say-no default, suppress detection and must be deactivated before the model reports an anomaly; evidence-carrier features just after the injection do that; naming the concept uses mostly separate mechanisms",
+   "tags": "Macar 26 · ICML",
+   "glyph": "●●●"
+  },
+  {
+   "row": "hedonic",
+   "col": "model",
+   "tier": 2,
+   "persona": false,
+   "headline": "A valence-like axis pre-exists the training; a resting mood is not shown",
+   "gloss": "Reward-and-punishment directions learned in a maze transfer to other settings and already work on checkpoints before the maze training, which the authors read as recruitment of a pre-existing axis (Qwen3-4B, per secondary reports); the first-token profile remains one unpublished probe at a persona-relative position",
+   "tags": "Han 26 · own probe · n=1",
+   "glyph": "●●○"
+  },
+  {
+   "row": "hedonic",
+   "col": "runstance",
+   "tier": 2,
+   "persona": false,
+   "headline": "No standing state in the stream; a planted one persists in the cache",
+   "gloss": "No persistently active linear assistant state was found; earlier emotion representations are recalled when attended to; and valence steered only while re-reading earlier turns changed a later choice with steering off. Whether a naturally induced mood persists is open",
+   "tags": "Anthropic 26 · Berg 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "hedonic",
+   "col": "instance",
+   "tier": 2,
+   "persona": true,
+   "headline": "Whose feeling? Whoever is being written",
+   "gloss": "A vector fires on a character’s email, then on the assistant playing a role; a self-directed-harm direction stays consistent with tracking the reply position across reassigned characters, and fades under a fiction frame (v3 appendix, read only in snippets). No study yet separates a persona’s valence from the model’s",
+   "tags": "Anthropic 26 · Tagliabue 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "hedonic",
+   "col": "token",
+   "tier": 0,
+   "persona": false,
+   "headline": "Birch’s flicker hypothesis",
+   "gloss": "One of his two candidates: “momentary, temporally fragmented flickers” per processing event, each token in his §9. The other is per physical implementation; he calls both audacious and assigns neither a sign",
+   "tags": "Birch 25",
+   "glyph": "○○○"
+  },
+  {
+   "row": "preference",
+   "col": "model",
+   "tier": 3,
+   "persona": false,
+   "headline": "Repeatable choices, no single ordering",
+   "gloss": "Forced-choice utilities fit across 23 models, and 20 systems that had to perform the tasks they chose show stable leanings, yet systematic variation of the options breaks consistency. This bears on Chalmers’s objection that a model says contradictory things to different users",
+   "tags": "Mazeika 25 · NeurIPS · Wang 26 · AIES · Ajayi 26 · Chalmers 25",
+   "glyph": "●●●"
+  },
+  {
+   "row": "preference",
+   "col": "runstance",
+   "tier": 2,
+   "persona": true,
+   "headline": "Same someone, changed? One model un-steers itself",
+   "gloss": "A new persona inherits the old one’s whole cache, one of two readings left open; on OLMo-2-32B, removing an imposed negative direction was chosen 35% of the time against 7% for a random one, while the positive one was self-administered 13% against 7% random and no more than the unsteered 10%",
+   "tags": "B&B 26 · Berg 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "preference",
+   "col": "instance",
+   "tier": 2,
+   "persona": true,
+   "headline": "Likes flip with the persona",
+   "gloss": "A linear probe read at the prefilled assistant turn rates harm against benign; the sign reverses under an evil persona on Gemma 3 27B and only narrows toward zero on Qwen 3.5 122B and at user turns",
+   "tags": "Gilg 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "preference",
+   "col": "token",
+   "tier": 2,
+   "persona": false,
+   "headline": "A choice is readable in one pass",
+   "gloss": "A/B task choices read from one pass’s logits move by hundreds of Elo points under emotion steering",
+   "tags": "Anthropic 26",
+   "glyph": "●●○"
+  },
+  {
+   "row": "relational",
+   "col": "model",
+   "tier": 3,
+   "persona": false,
+   "headline": "Attachment to a product, measured",
+   "gloss": "After the GPT-5 rollout removed 4o from ChatGPT, negative subreddit posts rose about 13 points, and about 25 after Replika’s roleplay removal; 1,482 #Keep4o posts name lost workflows, lost relationships and lost choice. Which computational object is attached to stays unresolved",
+   "tags": "De Freitas 26 · NHB · Lai 26 · CHI · product",
+   "glyph": "●●●"
+  },
+  {
+   "row": "relational",
+   "col": "runstance",
+   "tier": 3,
+   "persona": false,
+   "headline": "Memory and disclosure build trust over weeks",
+   "gloss": "Over two weeks with 40 social-chatbot users, memory plus reciprocal disclosure raised trust and the depth of disclosure against a baseline bot. Whether persona drift contributes to bonding is unmeasured",
+   "tags": "Jiang 26 · CHI",
+   "glyph": "●●●"
+  },
+  {
+   "row": "relational",
+   "col": "instance",
+   "tier": 3,
+   "persona": false,
+   "headline": "The reply you react to, measured",
+   "gloss": "AI-written supportive replies made people feel more heard on average than untrained humans’ replies, and an AI label reduced that rating; in two preregistered trials, pre-generated AI replies elicited closeness in deep talk, especially when labelled human",
+   "tags": "Yin 24 · PNAS · Kleinert 26 · Comm Psych",
+   "glyph": "●●●"
+  },
+  {
+   "row": "relational",
+   "col": "token",
+   "tier": 0,
+   "persona": false,
+   "headline": "Nobody meets a token; everyone meets its display",
+   "gloss": "A first-person hedge in an answer lowered reliance and raised accuracy for 404 people, at the grain of a phrase; no test reaches a single internal pass",
+   "tags": "Kim 24",
+   "glyph": "○○○"
+  }
+ ]
+}

@@ -1,0 +1,401 @@
+{
+ "mech-interp/runstance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "The cache carries the state",
+    "tier": 3
+   },
+   "why": "Astra: attending to a prefix is not re-reading; cache can be evicted/recomputed/shared; recurrent architectures differ"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Earlier positions reach later ones only through the cache",
+    "tier": 3
+   },
+   "why": "Review v9 W1/W2: headline contradicted gloss; the intervention caveat reconciles the Berg cells"
+  }
+ ],
+ "mech-interp/token": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Readouts live at a position",
+    "tier": 2
+   },
+   "why": "Astra: add the denominator (eight prompts) and the comparison position"
+  }
+ ],
+ "behaviour/model": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Narrow tuning, broad character",
+    "tier": 3
+   },
+   "why": "Verifier C: ICML text says 20%/6%; Astra’s 27% belongs to another paper; Nature 2026 version confirmed by DOI"
+  }
+ ],
+ "behaviour/runstance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "The default persona is loosely held",
+    "tier": 3
+   },
+   "why": "Astra: Luo & Laban (Findings of ACL 2026) as a second controllable cause of apparent drift; verified at primary text"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "The default persona is loosely held",
+    "tier": 3
+   },
+   "why": "Review v9 F5/L4: Luo is echoing between simulated agents on a subset, not assistant drift in 45,000 chats"
+  }
+ ],
+ "behaviour/token": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "One sampled token",
+    "tier": 3
+   },
+   "why": "Astra: “one sampled token per forward pass” fails under prefill and speculative decoding (Leviathan et al. 2023)"
+  }
+ ],
+ "self-report/model": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Tune one report, others follow",
+    "tier": 2
+   },
+   "why": "Verifier B: Table 2 split single-turn vs multi-turn; agentic misalignment unchanged; mixture included emotion claims"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Tune one report, others follow",
+    "tier": 2
+   },
+   "why": "Review v9 W8: shutdown sadness appears in all three settings"
+  }
+ ],
+ "self-report/runstance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Moves with the talk, and with the cache",
+    "tier": 1
+   },
+   "why": "Astra: Martorell & Bianchi v3 measurement reactivity; abstract-level verified, numbers (3.1 SD, 9 of 32) not reached and left out"
+  }
+ ],
+ "self-report/instance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "No privileged access shown",
+    "tier": 2
+   },
+   "why": "Astra item 2: positive and negative results both survive; Singh v1 primary, gaslight control; Atkinson v1 primary, 32B only; both carry COLM headers, held at preprint by rule"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Access depends on the question",
+    "tier": 2
+   },
+   "why": "Review v9 T4/F14: a COLM poster page for Atkinson appeared in search results, which meets the rule; Singh has only a PDF header and stays preprint; wording of the Atkinson clause hedged"
+  }
+ ],
+ "self-report/token": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "The probe beats the report",
+    "tier": 2
+   },
+   "why": "Verifier B: Ferrara numbers are two models (Mistral-7B, Qwen2.5-7B); the eight-model battery is a different, smaller test"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "The probe beats the report",
+    "tier": 2
+   },
+   "why": "Review v9 T2: Macar’s PMLR listing was seen in search results; fill follows the strongest clause"
+  }
+ ],
+ "dynamics/runstance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Transfer along a trajectory is untested",
+    "tier": 0
+   },
+   "why": "Astra item 1: Berg & Kaiser verified from the authors’ released data; Jhaveri main numbers verified, mechanism details not reached"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "History acts on later choices, through the cache or the text",
+    "tier": 2
+   },
+   "why": "Review v9 F12: a log-odds margin moved, nothing was sampled"
+  }
+ ],
+ "dynamics/instance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Doing and saying come apart, sometimes",
+    "tier": 1
+   },
+   "why": "Astra: Nguyen et al. (EMNLP 2026, primary text) on post-hoc ownership of supplied text; fill follows the strongest clause by the “·” rule"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Account and act come apart, then get re-joined",
+    "tier": 3
+   },
+   "why": "Review v9 T1/W5/F11: EMNLP known only from the authors’ README, held at preprint; headline no longer reads as repair; conditioning restored"
+  }
+ ],
+ "hedonic/model": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "A mood, or an artefact",
+    "tier": 1
+   },
+   "why": "Astra: Han, Chalmers & Izmailov; abstract-level verified; the own probe stays as a testable observation"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "A valence-like axis is in the weights; a resting mood is not shown",
+    "tier": 2
+   },
+   "why": "Review v9 F8/W7: pre-existence is the authors’ argument; model name is secondary"
+  }
+ ],
+ "hedonic/runstance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "No standing state in the stream",
+    "tier": 2
+   },
+   "why": "Astra item 1 upgrades the cache-persistence clause from open to planted-and-shown; natural persistence stays open"
+  }
+ ],
+ "hedonic/instance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Whose feeling? Whoever is being written",
+    "tier": 2
+   },
+   "why": "Astra: Tagliabue App. I (v3), reached only in snippets; the authors read it as tracking the reply position"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Whose feeling? Whoever is being written",
+    "tier": 2
+   },
+   "why": "Review v9 F9/I4: authors say “consistent with”; undefined “v3” tag removed"
+  }
+ ],
+ "hedonic/token": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Birch’s flicker hypothesis",
+    "tier": 0
+   },
+   "why": "Verifier C: §9 ties the flicker to the token; the illusion section uses the conversational step; both quoted"
+  }
+ ],
+ "preference/model": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Dismissed as incoherent",
+    "tier": 0
+   },
+   "why": "Astra §6: separate the empirical question of repeatable checkpoint choices from Chalmers’s argument; Mazeika verified at primary, Wang and Ajayi at extract level"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Repeatable choices, no single ordering",
+    "tier": 3
+   },
+   "why": "Review v9 W6: Astra’s reframing of Chalmers replaced by his quoted reason"
+  }
+ ],
+ "preference/runstance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Same someone, changed?",
+    "tier": 0
+   },
+   "why": "Astra: Berg & Kaiser self-steering task, OLMo only, verified from released data"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Same someone, changed? One model un-steers itself",
+    "tier": 2
+   },
+   "why": "Review v9 F10: same comparison class for both halves"
+  }
+ ],
+ "preference/instance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Likes flip with the persona",
+    "tier": 2
+   },
+   "why": "Verifier C: Qwen model is 3.5-122B; appendix B.3; v4 not reached"
+  }
+ ],
+ "relational/model": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Attachment to a name, or a region",
+    "tier": 2
+   },
+   "why": "Astra §7: De Freitas (Nature Human Behaviour) and Lai (CHI 2026); numbers at press/snippet level, confidence intervals not found and omitted"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Attachment to a product, measured",
+    "tier": 3
+   },
+   "why": "Review v9 F3/F15/W4: press-level denominator moved to the source entry; which removal named; vestigial ◆ removed"
+  }
+ ],
+ "relational/runstance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Bonding and drift may share a habitat",
+    "tier": 0
+   },
+   "why": "Astra §7 replaces the figure’s bonding-and-drift conjecture with measured human outcomes; the conjecture moves to the notes"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Memory and disclosure build trust, even with pre-written replies",
+    "tier": 3
+   },
+   "why": "Review v9 L1/W3: Kleinert measures closeness at reply level and moves to the instance cell"
+  }
+ ],
+ "relational/instance": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "The reply you react to",
+    "tier": 0
+   },
+   "why": "Astra §7: Yin, Jia & Wakslak 2024, response effect vs label effect"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "The reply you react to, measured",
+    "tier": 3
+   },
+   "why": "Review v9 L1: Kleinert joins the reply-level cell"
+  }
+ ],
+ "relational/token": [
+  {
+   "version": "v9",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Nobody meets a token",
+    "tier": 0
+   },
+   "why": "Astra §7: display-level cues (hedges, latency) are the token column’s human-side evidence; Kim primary, Tan snippet"
+  },
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Nobody meets a token; everyone meets its display",
+    "tier": 3
+   },
+   "why": "Review v9 T5/L3/F13: the level claim is argued; the study is at phrase level; Tan dropped as snippet-only"
+  }
+ ],
+ "dynamics/model": [
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "Post-training builds the report and inhibits it",
+    "tier": 2
+   },
+   "why": "Review v9 T2"
+  }
+ ],
+ "dynamics/token": [
+  {
+   "version": "v9.1",
+   "date": "2026-11-05",
+   "from": {
+    "headline": "A default “No” inside the pass",
+    "tier": 2
+   },
+   "why": "Review v9 T2"
+  }
+ ]
+}

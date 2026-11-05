@@ -1,0 +1,270 @@
+{
+ "sources": [
+  {
+   "tag": "Lu 26",
+   "html": "Lu, Gallagher, Michala, Fish, Lindsey. <a href=\"https://arxiv.org/abs/2601.10387\">The Assistant Axis: Situating and Stabilizing the Default Persona of Language Models</a>. arXiv 2601.10387; ICML 2026 (PMLR 306) per search listings. Gemma 2 27B, Qwen 3 32B, Llama 3.3 70B; simulated users."
+  },
+  {
+   "tag": "B&B 26",
+   "html": "Beckmann, Butlin. <a href=\"https://arxiv.org/abs/2604.17031\">Where is the Mind? Persona Vectors and LLM Individuation</a>. arXiv 2604.17031; v2 read, v3 (Sep 2026) forthcoming in Ergo per its header. Two preliminary experiments on Qwen 3 32B."
+  },
+  {
+   "tag": "Anthropic 26",
+   "html": "Sofroniew, Kauvar, Saunders, Chen et al. <a href=\"https://transformer-circuits.pub/2026/emotions/index.html\">Emotion Concepts and their Function in a Large Language Model</a>. Transformer Circuits, Apr 2026; arXiv 2604.07729. Claude Sonnet 4.5; the blackmail study used an earlier unreleased snapshot. 171 emotion concepts."
+  },
+  {
+   "tag": "Lindsey 25",
+   "html": "Lindsey. <a href=\"https://arxiv.org/abs/2601.01828\">Emergent Introspective Awareness in Large Language Models</a>. Transformer Circuits, Oct 2025; arXiv 2601.01828. Claude Opus 4.1 and earlier Claude models; about 20% success at the best layer and strength, zero false positives in production models."
+  },
+  {
+   "tag": "Macar 26",
+   "html": "Macar, Yang, Wang, Wallich, Ameisen, Lindsey. <a href=\"https://arxiv.org/abs/2603.21396\">Mechanisms of Introspective Awareness</a>. arXiv 2603.21396; ICML 2026, PMLR 306, per search listings. Gemma 3 27B, Qwen3-235B, OLMo 3.1 32B; refusal ablation 10.8% → 63.8% detection at 7.3% false positives."
+  },
+  {
+   "tag": "Ferrara 26",
+   "html": "Ferrara. <a href=\"https://arxiv.org/abs/2608.20569\">Open-Weight Masked Introspection</a>. arXiv 2608.20569, Aug 2026. Dose battery on Qwen2.5-7B and Mistral-7B (11,216 pairs, AUROC ≈ 0.50); probes 95.8% and 75.0%; a smaller eight-model battery."
+  },
+  {
+   "tag": "Singh 26",
+   "html": "Singh, Linzen, Ravfogel. <a href=\"https://arxiv.org/abs/2605.26242\">Can LLMs Introspect? A Reality Check</a>. arXiv 2605.26242; v1 read; the v2 PDF header names COLM 2026 in search snippets, no programme listing found. Llama 3.1 8B/70B, Qwen 2.5 72B, Gemma 3 27B."
+  },
+  {
+   "tag": "Atkinson 26",
+   "html": "Atkinson, Plunkett, Bau. <a href=\"https://arxiv.org/abs/2610.07186\">Identifying Introspection From the Inside</a>. arXiv 2610.07186, Oct 2026; COLM 2026 per its header and a poster page seen in search results. Qwen3 0.6B–32B; the effect appears at 32B."
+  },
+  {
+   "tag": "Martorell 26",
+   "html": "Martorell, Bianchi. <a href=\"https://arxiv.org/abs/2603.18893\">Don’t Ask: Understanding What Numeric Self-Reports Measure in Language Models</a>. arXiv 2603.18893 v3, 2026. Eight instruction-tuned models, 1–27B; abstract level, figures not reached."
+  },
+  {
+   "tag": "Chua 26",
+   "html": "Chua, Betley, Marks, Evans. <a href=\"https://arxiv.org/abs/2604.13051\">The Consciousness Cluster: Emergent Preferences of Models that Claim to be Conscious</a>. arXiv 2604.13051, Mar/Apr 2026. GPT-4.1, Qwen3-30B-A3B, DeepSeek-V3.1."
+  },
+  {
+   "tag": "Betley 25",
+   "html": "Betley et al. <a href=\"https://arxiv.org/abs/2502.17424\">Emergent Misalignment: Narrow Finetuning Can Produce Broadly Misaligned LLMs</a>. ICML 2025, PMLR 267; Nature 649:584–589, 2026. GPT-4o, Qwen2.5-Coder-32B. 20% on eight selected questions, 6% on 48 preregistered."
+  },
+  {
+   "tag": "Gilg 26",
+   "html": "Gilg, Beckmann, Paleka, Butlin. <a href=\"https://arxiv.org/abs/2605.13339\">Probing Persona-Dependent Preferences in Language Models</a>. arXiv 2605.13339; listings conflict (a NeurIPS 2026 poster URL and an ICML 2026 URL both appear), so held at preprint. Gemma 3 27B, Qwen 3.5 122B; v2 read."
+  },
+  {
+   "tag": "Berg 26",
+   "html": "Berg, Kaiser. <a href=\"https://arxiv.org/abs/2609.35591\">Language Models Act on Hidden Valence</a>. arXiv 2609.35591, Sep/Oct 2026, preprint; verified from the authors’ released data. Seven lineages, five families; self-steering task on OLMo-2-32B only."
+  },
+  {
+   "tag": "Jhaveri 26",
+   "html": "Jhaveri, Johnson, Pandey, Africa. <a href=\"https://arxiv.org/abs/2610.22460\">Functional Welfare for AI Safety</a>. arXiv 2610.22460, Oct 2026; the authors call it preliminary. Gemma 3 27B only; snippet level."
+  },
+  {
+   "tag": "Tagliabue 26",
+   "html": "Tagliabue, Dung, Berg. <a href=\"https://arxiv.org/abs/2609.16247\">The Pain Axis</a>. arXiv 2609.16247, v1 Sep to v3 Nov 2026; v2 read, v3 appendix in snippets. 25 checkpoints, five families; the relief reading was withdrawn by the authors in v2."
+  },
+  {
+   "tag": "Han 26",
+   "html": "Han, Chalmers, Izmailov. <a href=\"https://arxiv.org/abs/2605.30232\">How’s it going? Reinforcement learning in language models recruits a functional welfare axis</a>. arXiv 2605.30232, 2026, preprint; abstract level. Qwen3-4B per secondary reports."
+  },
+  {
+   "tag": "Nguyen 26",
+   "html": "Nguyen, Ahmed, Kim. <a href=\"https://arxiv.org/abs/2606.23671\">Can LLMs Reliably Self-Report Adversarial Prefills, and How?</a> arXiv 2606.23671; EMNLP 2026 per the authors’ README only, held at preprint. Ten open models 3–70B; 25.3% intent claims where the prefill changed safety behaviour."
+  },
+  {
+   "tag": "Mazeika 25",
+   "html": "Mazeika et al. <a href=\"https://arxiv.org/abs/2502.08640\">Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs</a>. NeurIPS 2025 per search listings of the proceedings. 23 models, 500 outcomes, Thurstonian fits."
+  },
+  {
+   "tag": "Wang 26",
+   "html": "Wang et al. <a href=\"https://arxiv.org/abs/2608.26178\">AI Revealed Preferences</a>. AIES 2026 proceedings per listing; arXiv 2608.26178. 20 systems that must perform the chosen task."
+  },
+  {
+   "tag": "Ajayi 26",
+   "html": "Ajayi, Chowdhury, Lazar. <a href=\"https://arxiv.org/abs/2606.21102\">Incoherent Values? Probing LLM Preferences Through Parametric Variation</a>. arXiv 2606.21102, Jun 2026; extract level."
+  },
+  {
+   "tag": "Luo 26",
+   "html": "Luo, Laban. <a href=\"https://arxiv.org/abs/2604.09212\">SPASM</a>. Findings of ACL 2026; arXiv 2604.09212. 45,000 LLM-to-LLM simulated conversations; the history effect is shown on a subset, with role confusion measured as echoing."
+  },
+  {
+   "tag": "Chalmers 25",
+   "html": "Chalmers. <a href=\"https://philarchive.org/rec/CHAWWT-8\">What We Talk to When We Talk to Language Models</a>. PhilArchive 2025; Inquiry 69, 2026, per listings. Read through quotation."
+  },
+  {
+   "tag": "Birch 25",
+   "html": "Birch. <a href=\"https://philarchive.org/rec/BIRACA-4\">AI Consciousness: A Centrist Manifesto</a>. PsyArXiv / PhilArchive, Sep 2025, revised to Jul 2026. Read through quotation and search snippets of two sections."
+  },
+  {
+   "tag": "Kirkpatrick 26",
+   "html": "Kirkpatrick, Radulescu, Sterken. Talking with language models. Inquiry, online Oct 2026, DOI 10.1080/0020174X.2026.2745114; abstract level."
+  },
+  {
+   "tag": "OpenAI 25–26",
+   "html": "Altman on X, 8 and 10 Aug 2025 (“how much of an attachment some people have to specific AI models”); OpenAI, <a href=\"https://openai.com/index/retiring-gpt-4o-and-older-models/\">Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT</a>, 29 Jan 2026."
+  },
+  {
+   "tag": "De Freitas 26",
+   "html": "De Freitas et al. Mourning the loss of AI companions. Nature Human Behaviour, 2026, DOI 10.1038/s41562-026-02569-3. 54,861 posts from the Replika and ChatGPT subreddits and seven surveys, per press coverage; point estimates at press level, confidence intervals not found in any reachable source."
+  },
+  {
+   "tag": "Lai 26",
+   "html": "Lai. “Please, don’t kill the only model that still feels human”: Understanding the #Keep4o Backlash. CHI 2026; arXiv 2602.00773. 1,482 posts."
+  },
+  {
+   "tag": "Jiang 26",
+   "html": "Jiang, Zheng, Chen, Chen. RECALLbot. CHI 2026, article 795. Two-week between-subjects study, N=40."
+  },
+  {
+   "tag": "Kleinert 26",
+   "html": "Kleinert, Waldschütz, Blau, Heinrichs, Schiller. Communications Psychology 4:23, 2026. Two preregistered double-blind trials; N reported as 322 and 334 in the text, 492 in press."
+  },
+  {
+   "tag": "Yin 24",
+   "html": "Yin, Jia, Wakslak. PNAS 121(14), 2024, DOI 10.1073/pnas.2319112121. Response effect against label effect."
+  },
+  {
+   "tag": "Kim 24",
+   "html": "Kim, Liao, Vorvoreanu, Ballard, Wortman Vaughan. FAccT 2024; arXiv 2405.00623, read in full. N=404, preregistered; first-person hedges in search-engine answers."
+  },
+  {
+   "tag": "own probe",
+   "html": "Siener, Oct 2026. Emotion-vector projections at the first token and at assistant turn onset, one prompt, one small open-weight model; the model is not recorded in the thread. Unpublished."
+  },
+  {
+   "tag": "architecture",
+   "html": "Decoder-only transformer inference: each position reads every earlier position through the key-value cache, sampling commits to one token per pass, and no other state survives a turn within the context window."
+  },
+  {
+   "tag": "product",
+   "html": "A named service rather than a checkpoint: a product name can span snapshots, system prompts and routing, so user reactions to a rollout belong to the product unless a study isolates weights."
+  }
+ ],
+ "keys": [
+  {
+   "tag": "Lu 26",
+   "short": "The Assistant Axis (ICML 2026)"
+  },
+  {
+   "tag": "B&B 26",
+   "short": "Beckmann & Butlin, Where is the Mind?"
+  },
+  {
+   "tag": "Anthropic 26",
+   "short": "Emotion Concepts and their Function"
+  },
+  {
+   "tag": "Lindsey 25",
+   "short": "Emergent Introspective Awareness"
+  },
+  {
+   "tag": "Macar 26",
+   "short": "Mechanisms of Introspective Awareness (ICML 2026)"
+  },
+  {
+   "tag": "Ferrara 26",
+   "short": "Open-Weight Masked Introspection"
+  },
+  {
+   "tag": "Singh 26",
+   "short": "Can LLMs Introspect? A Reality Check"
+  },
+  {
+   "tag": "Atkinson 26",
+   "short": "Identifying Introspection From the Inside"
+  },
+  {
+   "tag": "Martorell 26",
+   "short": "Don’t Ask: numeric self-reports"
+  },
+  {
+   "tag": "Chua 26",
+   "short": "The Consciousness Cluster"
+  },
+  {
+   "tag": "Betley 25",
+   "short": "Emergent Misalignment (ICML 2025, Nature)"
+  },
+  {
+   "tag": "Gilg 26",
+   "short": "Persona-Dependent Preferences"
+  },
+  {
+   "tag": "Berg 26",
+   "short": "Language Models Act on Hidden Valence"
+  },
+  {
+   "tag": "Jhaveri 26",
+   "short": "Functional Welfare for AI Safety"
+  },
+  {
+   "tag": "Tagliabue 26",
+   "short": "The Pain Axis"
+  },
+  {
+   "tag": "Han 26",
+   "short": "RL recruits a functional welfare axis"
+  },
+  {
+   "tag": "Nguyen 26",
+   "short": "self-reporting adversarial prefills"
+  },
+  {
+   "tag": "Mazeika 25",
+   "short": "Utility Engineering (NeurIPS 2025)"
+  },
+  {
+   "tag": "Wang 26",
+   "short": "AI Revealed Preferences (AIES 2026)"
+  },
+  {
+   "tag": "Ajayi 26",
+   "short": "Incoherent Values?"
+  },
+  {
+   "tag": "Luo 26",
+   "short": "SPASM, role confusion (ACL 2026)"
+  },
+  {
+   "tag": "Chalmers 25",
+   "short": "What We Talk to When We Talk to LMs"
+  },
+  {
+   "tag": "Birch 25",
+   "short": "AI Consciousness: A Centrist Manifesto"
+  },
+  {
+   "tag": "De Freitas 26",
+   "short": "Mourning the loss of AI companions (NHB)"
+  },
+  {
+   "tag": "Lai 26",
+   "short": "the #Keep4o backlash (CHI 2026)"
+  },
+  {
+   "tag": "Jiang 26",
+   "short": "RECALLbot (CHI 2026)"
+  },
+  {
+   "tag": "Kleinert 26",
+   "short": "closeness with pre-generated replies"
+  },
+  {
+   "tag": "Yin 24",
+   "short": "feeling heard by AI replies (PNAS 2024)"
+  },
+  {
+   "tag": "Kim 24",
+   "short": "uncertainty expressions (FAccT 2024)"
+  },
+  {
+   "tag": "own probe",
+   "short": "emotion-vector projections at first token and turn onset, unpublished"
+  },
+  {
+   "tag": "architecture",
+   "short": "decoder-only inference, prefill, speculative decoding"
+  },
+  {
+   "tag": "product",
+   "short": "a named service, not a checkpoint"
+  }
+ ]
+}

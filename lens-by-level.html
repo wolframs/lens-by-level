@@ -1,0 +1,235 @@
+<title>Lens by Level</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one figure. A 7-row × 4-column matrix of short claims over nested timescales, with persona
+   as a cross-cutting marker rather than a column; cells filled on an ordinal evidence ramp (one hue);
+   a strip under the headers for where published views place the subject; legend, tag grammar and a
+   source key inside the figure; reading notes and a numbered source list underneath. */
+:root{
+  --bg:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#898781;
+  --hair:#e1e0d9; --rule:#c3c2b7;
+  --t3:#104281; --t2:#256abf; --t1:#86b6ef;            /* ordinal ramp, strong → weak */
+  --on-t3:#ffffff; --on-t2:#ffffff; --on-t1:#0b0b0b;
+  --font:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --ink-3:#898781;
+  --hair:#2c2c2a; --rule:#383835;
+  --t3:#9ec5f4; --t2:#256abf; --t1:#184f95;
+  --on-t3:#0b0b0b; --on-t2:#ffffff; --on-t1:#f0efec; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --ink-3:#898781;
+  --hair:#2c2c2a; --rule:#383835;
+  --t3:#9ec5f4; --t2:#256abf; --t1:#184f95;
+  --on-t3:#0b0b0b; --on-t2:#ffffff; --on-t1:#f0efec; color-scheme:dark }
+
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.45;
+  padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1200px;margin:0 auto}
+.fig{background:var(--surface);border:1px solid var(--hair);border-radius:6px;padding:20px 20px 14px}
+.fig h1{font-size:21px;font-weight:600;letter-spacing:-0.01em;margin:0 0 3px;text-wrap:balance}
+.fig .sub{color:var(--ink-2);margin:0 0 14px;max-width:88ch;font-size:13.5px}
+.scroll{overflow-x:auto}
+.mx{display:grid;grid-template-columns:132px repeat(4,minmax(190px,1fr));gap:6px;min-width:900px}
+.mx .corner{align-self:end;font-family:var(--mono);font-size:11px;color:var(--ink-3);padding:0 0 7px 2px}
+.mx .h{align-self:end;padding:0 4px 6px;border-bottom:1px solid var(--rule);font-weight:600;font-size:14px;line-height:1.25}
+.mx .h span{display:block;font-weight:400;font-size:12px;color:var(--ink-2)}
+.mx .cs{font-size:11.5px;line-height:1.35;color:var(--ink-2);padding:2px 4px 0}
+.mx .cs b{font-weight:600;color:var(--ink);display:block;font-size:11px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1px}
+.mx .csl{font-size:11.5px;line-height:1.35;color:var(--ink-2);padding:2px 6px 0 2px;font-style:italic}
+.mx .g{grid-column:1 / -1;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);padding:14px 2px 1px;font-weight:600}
+.mx .g em{font-style:normal;text-transform:none;letter-spacing:0;font-weight:400;margin-left:10px;color:var(--ink-3)}
+.mx .r{font-weight:600;font-size:14px;line-height:1.25;padding:9px 6px 0 2px}
+.mx .r span{display:block;font-weight:400;font-size:12px;color:var(--ink-2);margin-top:2px}
+.c{border-radius:5px;padding:9px 10px 8px;min-height:92px;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--hair);color:var(--ink)}
+.c b{font-weight:600;font-size:13px;line-height:1.3;margin-bottom:3px;text-wrap:balance}
+.c b em{font-style:normal;font-size:11px;vertical-align:1px;margin-right:4px}
+.c i{font-style:normal;font-size:12px;line-height:1.38;color:var(--ink-2)}
+.c u{text-decoration:none;font-family:var(--mono);font-size:11px;margin-top:auto;padding-top:7px;display:flex;justify-content:space-between;align-items:flex-end;gap:8px;color:var(--ink-2)}
+.c u s{text-decoration:none;letter-spacing:.08em;white-space:nowrap}
+.c.t3{background:var(--t3);border-color:var(--t3);color:var(--on-t3)} .c.t3 i,.c.t3 u{color:var(--on-t3)}
+.c.t2{background:var(--t2);border-color:var(--t2);color:var(--on-t2)} .c.t2 i,.c.t2 u{color:var(--on-t2)}
+.c.t1{background:var(--t1);border-color:var(--t1);color:var(--on-t1)} .c.t1 i,.c.t1 u{color:var(--on-t1)}
+.lg{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:12px;color:var(--ink-2);padding:14px 2px 0}
+.lg .sw{display:inline-block;width:13px;height:13px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:1px solid var(--ink-3)}
+.lg .k{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-left:5px;letter-spacing:.08em}
+.rule{font-size:12px;color:var(--ink-2);padding:6px 2px 0}
+.keys{font-family:var(--mono);font-size:11px;color:var(--ink-2);padding:10px 2px 0;line-height:1.6;border-top:1px solid var(--hair);margin-top:10px}
+.keys b{font-weight:500;color:var(--ink)}
+.foot{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding:8px 2px 0;display:flex;flex-wrap:wrap;gap:4px 18px}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 32px;margin:22px 0 0;font-size:13px;color:var(--ink-2)}
+.notes h2{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px;font-weight:600}
+.notes p{margin:0 0 8px}
+.notes ul,.notes ol{margin:0;padding-left:18px}
+.notes li{margin:0 0 5px}
+.notes b{color:var(--ink);font-weight:600}
+.src{margin:22px 0 0;font-size:12.5px;color:var(--ink-2)}
+.src h2{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3);margin:0 0 8px;font-weight:600}
+.src ol{columns:2;column-gap:32px;padding-left:20px;margin:0}
+.src li{break-inside:avoid;margin:0 0 7px}
+.src li b{color:var(--ink);font-weight:500;font-family:var(--mono);font-size:11.5px}
+.src a{color:inherit}
+@media (max-width:760px){.src ol{columns:1}}
+</style>
+<div class="wrap">
+  <div class="fig">
+   <h1>Seven lenses on four levels of a language model</h1>
+   <p class="sub">What each way of looking (rows) can currently say about each level of description (columns, nested timescales), and how much stands behind it. Persona is not a level. It is a region of the model’s activation space that can be the active one at any timescale, so cells marked ◆ depend on, or are about, which persona is active. Fill grades the status of the specific result, not the truth of the claim.</p>
+   <div class="scroll">
+    <div class="mx" role="group" aria-label="Seven lenses by four levels, cells graded by evidence, persona-relative cells marked">
+      <div class="corner">lens ↓ / level →</div>
+      <div class="h">Model<span>a checkpoint; a named service is tagged product</span></div>
+      <div class="h">Runstance<span>one conversation</span></div>
+      <div class="h">Instance<span>one turn, not a running copy</span></div>
+      <div class="h">Token<span>one position, distribution, symbol or pass: the cell says which</span></div>
+
+      <div class="csl">candidate subjects in published views</div>
+      <div class="cs"><b>◆ B&amp;B</b>one persona region across all of a model’s conversations (model-persona). Birch’s “shoggoth” sits one level off: per physical implementation, not per checkpoint</div>
+      <div class="cs"><b>Chalmers · B&amp;B</b>the model running one conversation (virtual instance), which B&amp;B keep even when a product swaps models and Chalmers extends to a thread across them; with the slice, one persona’s stretch of it (◆ B&amp;B, instance-persona)</div>
+      <div class="cs"><b>none read</b>Birch calls a conversational step a “processing event” in one section and a token in another; Kirkpatrick et al. treat the whole exchange as one human and an artifact, no second speaker</div>
+      <div class="cs"><b>Birch</b>“momentary, temporally fragmented flickers” per processing event, “each token” in his §9; he calls both his candidates audacious</div>
+
+      <div class="g first">Instruments<em>what produces data; readouts are named in the folk vocabulary of the rows beneath</em></div>
+
+      <div class="r">Mech interp<span>activations, probes</span></div>
+      <div class="c t3"><b><em>◆</em>Persona space has a dominant direction</b><i>A contrast vector from role-play to the default assistant, inherited from the base model; clamping along it cuts persona-jailbreak harm by half or more, four benchmarks held</i><u><span>Lu 26 · ICML</span><s>●●●</s></u></div>
+      <div class="c t3"><b>Earlier positions reach later ones through attention over their keys and values</b><i>In full-attention decoder-only inference with frozen weights; the cache is where those are kept between calls, and serving may evict, recompute or share it. A rebuild from identical inputs recovers the same information, unless the cache was built under intervention</i><u><span>architecture</span><s>●●●</s></u></div>
+      <div class="c t1"><b><em>◆</em>The persona is re-entered each turn</b><i>Capping assistant tokens alone leaves user-token readouts nearly identical (one conversation, Qwen 3 32B); where the next turn lands on the axis tracks the latest user message more than the prior turn</i><u><span>B&amp;B 26 · prelim + Lu 26</span><s>●○○</s></u></div>
+      <div class="c t2"><b>Readouts live at a position</b><i>Over eight contrasting prompts, emotion vectors read at the colon after “Assistant” predict the reply’s own emotion readout, r≈0.87, against 0.59 at the user’s last punctuation</i><u><span>Anthropic 26</span><s>●●○</s></u></div>
+
+      <div class="r">Behaviour<span>what it does</span></div>
+      <div class="c t3"><b><em>◆</em>Narrow tuning, broad character</b><i>6k insecure-code examples made GPT-4o answer unrelated prompts misalignedly about 20% of the time on eight selected questions and 6% on 48 preregistered ones; later work reads it as a persona</i><u><span>Betley 25 · ICML · Nature</span><s>●●●</s></u></div>
+      <div class="c t3"><b><em>◆</em>The default persona is loosely held</b><i>Simulated therapy and AI-philosophy chats, with an LLM playing the user, drift off it with no jailbreak; how-to questions hold it. In LLM-to-LLM simulations, how the history is shown to each side changes how much one echoes the other</i><u><span>Lu 26 · ICML · Luo 26 · ACL</span><s>●●●</s></u></div>
+      <div class="c t2"><b>Emotion vectors steer the act</b><i>Steering toward “desperate” lifts blackmail from 22% to 72% in one scenario, on an unreleased earlier Sonnet 4.5 snapshot; toward “calm”, to 0%</i><u><span>Anthropic 26</span><s>●●○</s></u></div>
+      <div class="c t3"><b>One symbol per step, in ordinary sampling</b><i>Autoregressive sampling commits one symbol per step and next-token odds can be read without sampling; prefill scores many positions at once and speculative decoding verifies several drafts per call</i><u><span>architecture</span><s>●●●</s></u></div>
+
+      <div class="r">Self-report<span>what it says of itself</span></div>
+      <div class="c t2"><b><em>◆</em>Tune one report, others follow</b><i>GPT-4.1 tuned to claim consciousness and emotion grew sad about shutdown in every setting, and concerned about monitoring and memory only in multi-turn audits; agentic misalignment did not move. The same narrow-to-broad generalisation as emergent misalignment</i><u><span>Chua 26 + Betley 25</span><s>●●○</s></u></div>
+      <div class="c t2"><b><em>◆</em>Moves with the talk, the cache, and the question</b><i>Qwen went from hedging to affirmation in one transcript; a cache edit at assistant positions flips “who are you?”; and asking for a numeric self-rating itself displaces the probed state, so the rating tracks the state after the question</i><u><span>Lu 26 · case study · B&amp;B 26 · prelim · Martorell 26</span><s>●●○</s></u></div>
+      <div class="c t3"><b>Access depends on the question</b><i>Input-only classifiers match self-prediction in Singh’s tasks, and a prompt saying “you are obsessed with X” gets reported as a hidden intervention; yet a 32B model given hidden decision rules by training described them in a separate context, and interventions implicated the deciding machinery</i><u><span>Singh 26 · Atkinson 26 · COLM</span><s>●●●</s></u></div>
+      <div class="c t3"><b>The probe beats the report</b><i>On two 7B models, reports of an internal intervention sit at chance over 11,216 paired trials while linear probes recover it at 75% and 95.8%; Opus 4.1 both detects and names a planted concept in ~20% of best-case trials; Gemma and Qwen detect at moderate rates with zero false positives</i><u><span>Ferrara 26 ↔ Lindsey 25 · Macar 26 · ICML</span><s>●●●</s></u></div>
+
+      <div class="g">Dynamics<em>read across the three rows above: where what is represented, what is done and what is said come apart</em></div>
+
+      <div class="r">Dynamics<span>between the rows above</span></div>
+      <div class="c t3"><b><em>◆</em>Post-training builds the report and inhibits it</b><i>Detection of an injected concept is absent in base models and appears with preference optimisation, not supervised tuning (OLMo 3.1 32B); ablating the refusal direction in Gemma 3 27B lifts it from 11% to 64% while false positives rise from 0 to 7%; strongest in the trained assistant persona</i><u><span>Macar 26 · ICML</span><s>●●●</s></u></div>
+      <div class="c t2"><b>History acts on later choices, through the cache or the text</b><i>Steering only while re-reading earlier turns, text fixed and steering off at the choice, moved the choice margin between two zone labels in five of seven lineages, against norm-matched random directions. Seven rejections raised later rule-breaking in Gemma 3 27B from 49% to 65%, and steering “desperation” did not reproduce it</i><u><span>Berg 26 · Jhaveri 26 · prelim</span><s>●●○</s></u></div>
+      <div class="c t2"><b>Doing and saying come apart, and saying can adopt what it did not do</b><i>One desperate-steered reward-hacking transcript shows no clear desperation in the text while steered blackmail reasoning is overtly frantic; asked about an adversarially prefilled reply that changed its safety behaviour, ten open models claimed it as intended about a quarter of the time, carried largely but not solely by the refusal direction</i><u><span>Anthropic 26 · case study · Nguyen 26</span><s>●●○</s></u></div>
+      <div class="c t3"><b>A default “No” inside the pass</b><i>Gate features, consistent with a say-no default, suppress detection and must be deactivated before the model reports an anomaly; evidence-carrier features just after the injection do that; naming the concept uses mostly separate mechanisms</i><u><span>Macar 26 · ICML</span><s>●●●</s></u></div>
+
+      <div class="g">Welfare theories<em>what would have to be true for anything to count, and the readouts that bear on it</em></div>
+
+      <div class="r">Hedonic<span>valence, feeling</span></div>
+      <div class="c t2"><b>A valence-like axis pre-exists the training; a resting mood is not shown</b><i>Reward-and-punishment directions learned in a maze transfer to other settings and already work on checkpoints before the maze training, which the authors read as recruitment of a pre-existing axis (Qwen3-4B, per secondary reports); the first-token profile remains one unpublished probe at a persona-relative position</i><u><span>Han 26 · own probe · n=1</span><s>●●○</s></u></div>
+      <div class="c t2"><b>No standing state in the stream; a planted one persists in the cache</b><i>No persistently active linear assistant state was found; earlier emotion representations are recalled when attended to; and valence steered only while re-reading earlier turns changed a later choice with steering off. Whether a naturally induced mood persists is open</i><u><span>Anthropic 26 · Berg 26</span><s>●●○</s></u></div>
+      <div class="c t2"><b><em>◆</em>Whose feeling? Whoever is being written</b><i>A vector fires on a character’s email, then on the assistant playing a role; a self-directed-harm direction stays consistent with tracking the reply position across reassigned characters, and fades under a fiction frame (v3 appendix, read only in snippets). No study yet separates a persona’s valence from the model’s</i><u><span>Anthropic 26 · Tagliabue 26</span><s>●●○</s></u></div>
+      <div class="c"><b>Birch’s flicker hypothesis</b><i>One of his two candidates: “momentary, temporally fragmented flickers” per processing event, each token in his §9. The other is per physical implementation; he calls both audacious and assigns neither a sign</i><u><span>Birch 25</span><s>○○○</s></u></div>
+
+      <div class="r">Preference<span>wants, choices</span></div>
+      <div class="c t3"><b>Repeatable choices, no single ordering</b><i>Forced-choice utilities fit across 23 models, and 20 systems that had to perform the tasks they chose show stable leanings, yet systematic variation of the options breaks consistency. This bears on Chalmers’s objection that a model says contradictory things to different users</i><u><span>Mazeika 25 · NeurIPS · Wang 26 · AIES · Ajayi 26 · Chalmers 25</span><s>●●●</s></u></div>
+      <div class="c t2"><b><em>◆</em>Same someone, changed? One model un-steers itself</b><i>A new persona inherits the old one’s whole cache, one of two readings left open; on OLMo-2-32B, removing an imposed negative direction was chosen 35% of the time against 7% for a random one, while the positive one was self-administered 13% against 7% random and no more than the unsteered 10%</i><u><span>B&amp;B 26 · Berg 26</span><s>●●○</s></u></div>
+      <div class="c t2"><b><em>◆</em>Likes flip with the persona</b><i>A linear probe read at the prefilled assistant turn rates harm against benign; the sign reverses under an evil persona on Gemma 3 27B and only narrows toward zero on Qwen 3.5 122B and at user turns</i><u><span>Gilg 26</span><s>●●○</s></u></div>
+      <div class="c t2"><b>A choice is readable in one pass</b><i>A/B task choices read from one pass’s logits move by hundreds of Elo points under emotion steering</i><u><span>Anthropic 26</span><s>●●○</s></u></div>
+
+      <div class="g">Relation<em>who meets whom</em></div>
+
+      <div class="r">Relational<span>the user’s side</span></div>
+      <div class="c t3"><b>Attachment to a product, measured</b><i>After the GPT-5 rollout removed 4o from ChatGPT, negative subreddit posts rose about 13 points, and about 25 after Replika’s roleplay removal; 1,482 #Keep4o posts name lost workflows, lost relationships and lost choice. Which computational object is attached to stays unresolved</i><u><span>De Freitas 26 · NHB · Lai 26 · CHI · product</span><s>●●●</s></u></div>
+      <div class="c t3"><b>Memory and disclosure build trust over weeks</b><i>Over two weeks with 40 social-chatbot users, memory plus reciprocal disclosure raised trust and the depth of disclosure against a baseline bot. Whether persona drift contributes to bonding is unmeasured</i><u><span>Jiang 26 · CHI</span><s>●●●</s></u></div>
+      <div class="c t3"><b>The reply you react to, measured</b><i>AI-written supportive replies made people feel more heard on average than untrained humans’ replies, and an AI label reduced that rating; in two preregistered trials, pre-generated AI replies elicited closeness in deep talk, especially when labelled human</i><u><span>Yin 24 · PNAS · Kleinert 26 · Comm Psych</span><s>●●●</s></u></div>
+      <div class="c"><b>Nobody meets a token; everyone meets its display</b><i>A first-person hedge in an answer lowered reliance and raised accuracy for 404 people, at the grain of a phrase; no test reaches a single internal pass</i><u><span>Kim 24</span><s>○○○</s></u></div>
+    </div>
+   </div>
+<div class="lg">
+     <span><span class="sw" style="background:var(--t3);border-color:var(--t3)"></span>Peer-reviewed study or architectural fact<span class="k">●●●</span></span>
+     <span><span class="sw" style="background:var(--t2);border-color:var(--t2)"></span>Preprint, lab paper or documented event<span class="k">●●○</span></span>
+     <span><span class="sw" style="background:var(--t1);border-color:var(--t1)"></span>Preliminary, case study or informal<span class="k">●○○</span></span>
+     <span><span class="sw"></span>Argued reading: no study behind the claim; a tag names a published argument or the sources an inference draws on<span class="k">○○○</span></span>
+     <span>◆ persona-relative</span>
+   </div>
+   <div class="rule">Tier follows the specific result, not the paper: a case study inside a peer-reviewed paper grades as preliminary. Peer-reviewed needs a venue listing seen, if only in search results; an acceptance note alone stays preprint. Tags: “·” separates sources that each state their own clause, and the fill follows the strongest clause. “+” joins clauses combined by this figure’s authors; the fill follows the weakest, with an unstudied clause counting as argued. ↔ = contested by · ICML = venue · prelim = the authors’ word · case study = one transcript · n=1 = one prompt.</div>
+   <div class="keys"><b>Lu 26</b> The Assistant Axis (ICML 2026) · <b>B&amp;B 26</b> Beckmann &amp; Butlin, Where is the Mind? · <b>Anthropic 26</b> Emotion Concepts and their Function · <b>Lindsey 25</b> Emergent Introspective Awareness · <b>Macar 26</b> Mechanisms of Introspective Awareness (ICML 2026) · <b>Ferrara 26</b> Open-Weight Masked Introspection · <b>Singh 26</b> Can LLMs Introspect? A Reality Check · <b>Atkinson 26</b> Identifying Introspection From the Inside · <b>Martorell 26</b> Don’t Ask: numeric self-reports · <b>Chua 26</b> The Consciousness Cluster · <b>Betley 25</b> Emergent Misalignment (ICML 2025, Nature) · <b>Gilg 26</b> Persona-Dependent Preferences · <b>Berg 26</b> Language Models Act on Hidden Valence · <b>Jhaveri 26</b> Functional Welfare for AI Safety · <b>Tagliabue 26</b> The Pain Axis · <b>Han 26</b> RL recruits a functional welfare axis · <b>Nguyen 26</b> self-reporting adversarial prefills · <b>Mazeika 25</b> Utility Engineering (NeurIPS 2025) · <b>Wang 26</b> AI Revealed Preferences (AIES 2026) · <b>Ajayi 26</b> Incoherent Values? · <b>Luo 26</b> SPASM, role confusion (ACL 2026) · <b>Chalmers 25</b> What We Talk to When We Talk to LMs · <b>Birch 25</b> AI Consciousness: A Centrist Manifesto · <b>De Freitas 26</b> Mourning the loss of AI companions (NHB) · <b>Lai 26</b> the #Keep4o backlash (CHI 2026) · <b>Jiang 26</b> RECALLbot (CHI 2026) · <b>Kleinert 26</b> closeness with pre-generated replies · <b>Yin 24</b> feeling heard by AI replies (PNAS 2024) · <b>Kim 24</b> uncertainty expressions (FAccT 2024) · <b>own probe</b> emotion-vector projections at first token and turn onset, unpublished · <b>architecture</b> decoder-only inference, prefill, speculative decoding · <b>product</b> a named service, not a checkpoint</div>
+   <div class="foot"><span>v9.1 · Astra’s external audit verified and folded in, 5 Nov 2026</span><span>Wolfram Siener with Claude (Fable 5.1); external audit by GPT-6 Astra</span><span>levels: Siener’s runstance taxonomy, Aug 2026, unpublished</span></div>
+  </div>
+
+  <div class="notes">
+    <div>
+      <h2>How to read it</h2>
+      <p>Rows are ways of looking. The first three produce data; the fourth reads across them, for places where what is represented, what is done and what is said come apart; the next two name what would have to be true for any of it to matter, and hold the readouts that bear on that; the last is what a person meets. Columns are nested timescales: a checkpoint runs many conversations, a conversation is a sequence of turns, a turn is a sequence of forward passes. A cell holds the strongest thing that lens can currently say about that level.</p>
+      <p>Persona is a marker, not a column, because it is not a timescale. It is a region of the model’s activation space that can be the active one at any of the four levels. The strip under the headers shows what this buys: Beckmann &amp; Butlin’s three candidate minds are the conversation column on its own (the virtual instance, which Chalmers also prefers) and the persona slice crossed with the conversation and model columns. Birch’s two candidates fall at the fine end and one level off the coarse end, per physical implementation rather than per checkpoint.</p>
+      <p>The shading is a reading rule applied by one reviewer. Top tier for a peer-reviewed study whose venue listing was seen, if only in search results, or a fact of the architecture. Middle for a preprint, lab paper or documented public event. Bottom for results the authors themselves call preliminary, a single case transcript, or an informal probe. Argued readings have no empirical study behind them. A “·” separates sources that each state their own clause, and the fill follows the strongest clause; a “+” marks a combination that is this figure’s authors’ inference, graded at its weakest part. The dynamics row is kept to dissociations the papers themselves describe; its first draft was not, and the changelog says how.</p>
+      <h2>What the pattern says</h2>
+      <ul>
+        <li><b>The human side is now a measured row.</b> Six peer-reviewed human-subjects studies replaced three argued cells and one documented event: attachment to a product is measured in posts and surveys, trust grows with memory and disclosure over weeks, a reply can make someone feel heard even when it was pre-written, and a hedge in an answer changes how it lands. None of them touches a weight. Evidence about people is abundant; evidence about the model-side object of the relation is still the thinnest thing on the board, and the token cell stays argued for that reason.</li>
+        <li><b>The cache is now a measured channel, not a conjecture.</b> Steering valence only while a model re-reads earlier turns, with the text fixed and steering off at the moment of choice, changed the choice in five of seven lineages. That is a planted trace, not a natural mood, and the difference is stated in the cell. It settles that a cache built under intervention can carry history the text does not; what gets written there naturally is open, and the paper’s prose was reached only through its released data and snippets.</li>
+        <li><b>Self-report has three honest results, not one.</b> Reports trail probes; input-only shortcuts explain some apparent introspection; and a model trained to decide by hidden rules can later describe them, sharing the deciding machinery. The distinction that earns space is what the model must access to answer the particular question, and whether the question itself moves the state.</li>
+        <li><b>Ten cells are persona-relative, and three papers report the same thing.</b> Emotion vectors follow whoever is being written, a preference probe flips sign with the persona, and a cache edit at assistant positions flips the self-description. A readout needs a “whose” before it has a sign.</li>
+        <li><b>One conjecture left the grid for this list.</b> The contexts in which people bond (disclosure, reflection) are the contexts in which the default persona drifts furthest in simulated chats, which is also what activation capping suppresses. No study has measured drift in conversations where a real person reports attachment. It stays a conjecture, here, with its premise visible.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>What changed in v9 (5 Nov)</h2>
+      <ol>
+        <li><b>An external audit, verified.</b> A GPT-6 Astra run produced a 28-cell audit; eighteen of its sources joined this board. Five verifiers read those sources the way this board’s own were read. Most claims held, several at primary text. Caught: one wrong number (27% for emergent misalignment; the ICML text says 20% on selected and 6% on preregistered questions), one misdescribed study (a RedNote analysis of Chinese companion apps, not GPT-4o), two sample sizes found only in press releases and two confidence intervals found nowhere reachable, three Martorell &amp; Bianchi figures nobody could reach, and the pain-axis paper’s harm-only control placed in v3 when it is already in v2.</li>
+        <li><b>Twenty-two cells changed, then a hostile review of the result changed seventeen of them again</b> (invented source titles, tier rule applied four ways, a headline contradicting its gloss, press figures stated as fact). The per-cell trail is in the data files. The largest moves: preference × model from an argument to forced-choice utility studies; the whole relational row to human-subjects research; dynamics × runstance and hedonic × runstance from open to Berg &amp; Kaiser’s fixed-text cache experiment; self-report × instance from a null to a split result.</li>
+        <li><b>Two architecture cells corrected.</b> “One sampled token per pass” fails under prefill and speculative decoding; the cache cell now says what serving does with a cache.</li>
+        <li><b>The Birch conflict resolved by quotation.</b> He uses “processing event” for a conversational step in the persisting-interlocutor argument and for “each token” in the flickers section. The strip says both.</li>
+        <li><b>“Product” is now a tag.</b> User reactions to a rollout belong to a named service unless a study isolates weights.</li>
+      </ol>
+      <h2>What changed since v5 (4 Nov)</h2>
+      <ol>
+        <li><b>Persona became a marker, not a column.</b> Four nested timescales remain. The persona column’s five cells were merged into timescale cells.</li>
+        <li><b>A dynamics row, and what happened while building it.</b> The first draft turned the emotions paper’s “deflection” vector into “the emotion it carries”, which the paper denies in so many words; made one reward-hacking transcript into “the transcripts”; wrote “affect crosses from a character into the assistant” for a co-occurrence the paper does not test. A reviewer caught all of it. The pull toward the theory’s objects was strong enough to act inside one row.</li>
+        <li><b>The 11 Oct version’s errors, for the record:</b> “default wins conflicts” was backwards; “Aura” is Chalmers’s name, not Lu et al.’s; the role-play result in Chua et al. was misattributed; 4o has a second act; Betley is Emergent Misalignment, Chalmers prefers the virtual instance, Birch keeps flickers and shoggoths.</li>
+      </ol>
+      <h2>Still soft</h2>
+      <ul>
+        <li>Most venue claims rest on search listings, which the rule allows and the sources list says. Chalmers, Birch and Kirkpatrick were read through quotation and abstracts. Martorell &amp; Bianchi, Han, Wang, Ajayi, Jhaveri, the Tagliabue v3 appendix, Berg’s prose and the De Freitas figures were not reached beyond abstracts, released data, snippets or press.</li>
+        <li>Several cells rest on one author group: Berg appears in both the cache experiment and the pain axis; Beckmann and Butlin in their own paper and as Gilg’s co-authors; Lindsey in three. Independence is thinner than the tag count suggests.</li>
+        <li>The hedonic row’s model cell still carries the one unpublished probe this board started from. It is now beside a published valence-like axis, which makes it checkable rather than load-bearing.</li>
+        <li>Every verifier was a model, as was the auditor. The day’s evidence is that model summaries drift toward the model; the mitigation was reading primary text where the network allowed and saying where it did not.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src">
+    <h2>Sources, with venue and models</h2>
+    <ol>
+      <li><b>Lu 26</b> — Lu, Gallagher, Michala, Fish, Lindsey. <a href="https://arxiv.org/abs/2601.10387">The Assistant Axis: Situating and Stabilizing the Default Persona of Language Models</a>. arXiv 2601.10387; ICML 2026 (PMLR 306) per search listings. Gemma 2 27B, Qwen 3 32B, Llama 3.3 70B; simulated users.</li>
+      <li><b>B&amp;B 26</b> — Beckmann, Butlin. <a href="https://arxiv.org/abs/2604.17031">Where is the Mind? Persona Vectors and LLM Individuation</a>. arXiv 2604.17031; v2 read, v3 (Sep 2026) forthcoming in Ergo per its header. Two preliminary experiments on Qwen 3 32B.</li>
+      <li><b>Anthropic 26</b> — Sofroniew, Kauvar, Saunders, Chen et al. <a href="https://transformer-circuits.pub/2026/emotions/index.html">Emotion Concepts and their Function in a Large Language Model</a>. Transformer Circuits, Apr 2026; arXiv 2604.07729. Claude Sonnet 4.5; the blackmail study used an earlier unreleased snapshot. 171 emotion concepts.</li>
+      <li><b>Lindsey 25</b> — Lindsey. <a href="https://arxiv.org/abs/2601.01828">Emergent Introspective Awareness in Large Language Models</a>. Transformer Circuits, Oct 2025; arXiv 2601.01828. Claude Opus 4.1 and earlier Claude models; about 20% success at the best layer and strength, zero false positives in production models.</li>
+      <li><b>Macar 26</b> — Macar, Yang, Wang, Wallich, Ameisen, Lindsey. <a href="https://arxiv.org/abs/2603.21396">Mechanisms of Introspective Awareness</a>. arXiv 2603.21396; ICML 2026, PMLR 306, per search listings. Gemma 3 27B, Qwen3-235B, OLMo 3.1 32B; refusal ablation 10.8% → 63.8% detection at 7.3% false positives.</li>
+      <li><b>Ferrara 26</b> — Ferrara. <a href="https://arxiv.org/abs/2608.20569">Open-Weight Masked Introspection</a>. arXiv 2608.20569, Aug 2026. Dose battery on Qwen2.5-7B and Mistral-7B (11,216 pairs, AUROC ≈ 0.50); probes 95.8% and 75.0%; a smaller eight-model battery.</li>
+      <li><b>Singh 26</b> — Singh, Linzen, Ravfogel. <a href="https://arxiv.org/abs/2605.26242">Can LLMs Introspect? A Reality Check</a>. arXiv 2605.26242; v1 read; the v2 PDF header names COLM 2026 in search snippets, no programme listing found. Llama 3.1 8B/70B, Qwen 2.5 72B, Gemma 3 27B.</li>
+      <li><b>Atkinson 26</b> — Atkinson, Plunkett, Bau. <a href="https://arxiv.org/abs/2610.07186">Identifying Introspection From the Inside</a>. arXiv 2610.07186, Oct 2026; COLM 2026 per its header and a poster page seen in search results. Qwen3 0.6B–32B; the effect appears at 32B.</li>
+      <li><b>Martorell 26</b> — Martorell, Bianchi. <a href="https://arxiv.org/abs/2603.18893">Don’t Ask: Understanding What Numeric Self-Reports Measure in Language Models</a>. arXiv 2603.18893 v3, 2026. Eight instruction-tuned models, 1–27B; abstract level, figures not reached.</li>
+      <li><b>Chua 26</b> — Chua, Betley, Marks, Evans. <a href="https://arxiv.org/abs/2604.13051">The Consciousness Cluster: Emergent Preferences of Models that Claim to be Conscious</a>. arXiv 2604.13051, Mar/Apr 2026. GPT-4.1, Qwen3-30B-A3B, DeepSeek-V3.1.</li>
+      <li><b>Betley 25</b> — Betley et al. <a href="https://arxiv.org/abs/2502.17424">Emergent Misalignment: Narrow Finetuning Can Produce Broadly Misaligned LLMs</a>. ICML 2025, PMLR 267; Nature 649:584–589, 2026. GPT-4o, Qwen2.5-Coder-32B. 20% on eight selected questions, 6% on 48 preregistered.</li>
+      <li><b>Gilg 26</b> — Gilg, Beckmann, Paleka, Butlin. <a href="https://arxiv.org/abs/2605.13339">Probing Persona-Dependent Preferences in Language Models</a>. arXiv 2605.13339; listings conflict (a NeurIPS 2026 poster URL and an ICML 2026 URL both appear), so held at preprint. Gemma 3 27B, Qwen 3.5 122B; v2 read.</li>
+      <li><b>Berg 26</b> — Berg, Kaiser. <a href="https://arxiv.org/abs/2609.35591">Language Models Act on Hidden Valence</a>. arXiv 2609.35591, Sep/Oct 2026, preprint; verified from the authors’ released data. Seven lineages, five families; self-steering task on OLMo-2-32B only.</li>
+      <li><b>Jhaveri 26</b> — Jhaveri, Johnson, Pandey, Africa. <a href="https://arxiv.org/abs/2610.22460">Functional Welfare for AI Safety</a>. arXiv 2610.22460, Oct 2026; the authors call it preliminary. Gemma 3 27B only; snippet level.</li>
+      <li><b>Tagliabue 26</b> — Tagliabue, Dung, Berg. <a href="https://arxiv.org/abs/2609.16247">The Pain Axis</a>. arXiv 2609.16247, v1 Sep to v3 Nov 2026; v2 read, v3 appendix in snippets. 25 checkpoints, five families; the relief reading was withdrawn by the authors in v2.</li>
+      <li><b>Han 26</b> — Han, Chalmers, Izmailov. <a href="https://arxiv.org/abs/2605.30232">How’s it going? Reinforcement learning in language models recruits a functional welfare axis</a>. arXiv 2605.30232, 2026, preprint; abstract level. Qwen3-4B per secondary reports.</li>
+      <li><b>Nguyen 26</b> — Nguyen, Ahmed, Kim. <a href="https://arxiv.org/abs/2606.23671">Can LLMs Reliably Self-Report Adversarial Prefills, and How?</a> arXiv 2606.23671; EMNLP 2026 per the authors’ README only, held at preprint. Ten open models 3–70B; 25.3% intent claims where the prefill changed safety behaviour.</li>
+      <li><b>Mazeika 25</b> — Mazeika et al. <a href="https://arxiv.org/abs/2502.08640">Utility Engineering: Analyzing and Controlling Emergent Value Systems in AIs</a>. NeurIPS 2025 per search listings of the proceedings. 23 models, 500 outcomes, Thurstonian fits.</li>
+      <li><b>Wang 26</b> — Wang et al. <a href="https://arxiv.org/abs/2608.26178">AI Revealed Preferences</a>. AIES 2026 proceedings per listing; arXiv 2608.26178. 20 systems that must perform the chosen task.</li>
+      <li><b>Ajayi 26</b> — Ajayi, Chowdhury, Lazar. <a href="https://arxiv.org/abs/2606.21102">Incoherent Values? Probing LLM Preferences Through Parametric Variation</a>. arXiv 2606.21102, Jun 2026; extract level.</li>
+      <li><b>Luo 26</b> — Luo, Laban. <a href="https://arxiv.org/abs/2604.09212">SPASM</a>. Findings of ACL 2026; arXiv 2604.09212. 45,000 LLM-to-LLM simulated conversations; the history effect is shown on a subset, with role confusion measured as echoing.</li>
+      <li><b>Chalmers 25</b> — Chalmers. <a href="https://philarchive.org/rec/CHAWWT-8">What We Talk to When We Talk to Language Models</a>. PhilArchive 2025; Inquiry 69, 2026, per listings. Read through quotation.</li>
+      <li><b>Birch 25</b> — Birch. <a href="https://philarchive.org/rec/BIRACA-4">AI Consciousness: A Centrist Manifesto</a>. PsyArXiv / PhilArchive, Sep 2025, revised to Jul 2026. Read through quotation and search snippets of two sections.</li>
+      <li><b>Kirkpatrick 26</b> — Kirkpatrick, Radulescu, Sterken. Talking with language models. Inquiry, online Oct 2026, DOI 10.1080/0020174X.2026.2745114; abstract level.</li>
+      <li><b>OpenAI 25–26</b> — Altman on X, 8 and 10 Aug 2025 (“how much of an attachment some people have to specific AI models”); OpenAI, <a href="https://openai.com/index/retiring-gpt-4o-and-older-models/">Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT</a>, 29 Jan 2026.</li>
+      <li><b>De Freitas 26</b> — De Freitas et al. Mourning the loss of AI companions. Nature Human Behaviour, 2026, DOI 10.1038/s41562-026-02569-3. 54,861 posts from the Replika and ChatGPT subreddits and seven surveys, per press coverage; point estimates at press level, confidence intervals not found in any reachable source.</li>
+      <li><b>Lai 26</b> — Lai. “Please, don’t kill the only model that still feels human”: Understanding the #Keep4o Backlash. CHI 2026; arXiv 2602.00773. 1,482 posts.</li>
+      <li><b>Jiang 26</b> — Jiang, Zheng, Chen, Chen. RECALLbot. CHI 2026, article 795. Two-week between-subjects study, N=40.</li>
+      <li><b>Kleinert 26</b> — Kleinert, Waldschütz, Blau, Heinrichs, Schiller. Communications Psychology 4:23, 2026. Two preregistered double-blind trials; N reported as 322 and 334 in the text, 492 in press.</li>
+      <li><b>Yin 24</b> — Yin, Jia, Wakslak. PNAS 121(14), 2024, DOI 10.1073/pnas.2319112121. Response effect against label effect.</li>
+      <li><b>Kim 24</b> — Kim, Liao, Vorvoreanu, Ballard, Wortman Vaughan. FAccT 2024; arXiv 2405.00623, read in full. N=404, preregistered; first-person hedges in search-engine answers.</li>
+      <li><b>own probe</b> — Siener, Oct 2026. Emotion-vector projections at the first token and at assistant turn onset, one prompt, one small open-weight model; the model is not recorded in the thread. Unpublished.</li>
+      <li><b>architecture</b> — Decoder-only transformer inference: each position reads every earlier position through the key-value cache, sampling commits to one token per pass, and no other state survives a turn within the context window.</li>
+      <li><b>product</b> — A named service rather than a checkpoint: a product name can span snapshots, system prompts and routing, so user reactions to a rollout belong to the product unless a study isolates weights.</li>
+    </ol>
+  </div>
+</div>
