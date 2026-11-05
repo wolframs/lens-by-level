@@ -1,6 +1,6 @@
 # Thread: why talking about AI is hard
 
-Six posts, one image each (`share/post-N.png`). Post 6 links the ledger once it is shared.
+Five posts, one image each (`share/post-1.png` to `post-5.png`), plus a reply with the ledger link once it is shared.
 
 **1 · post-1.png**
 Why is talking about AI so hard? Not because people are dumb. Every claim about AI is about "it", and "it" can mean four things: the trained model, one conversation, one reply, or the single step that picks the next word. Most arguments are two people talking about different ones and not noticing.
@@ -17,5 +17,5 @@ Second thing: the evidence is lopsided. The one row built from real people is no
 **5 · post-5.png**
 Third thing, the one that got me: readouts don't come with an owner. An emotion reading inside the model follows whoever is being written. A "what it likes" reading flips sign when a villain persona is active, on one of two models. Its answer to "who are you?" flips when you nudge what it stored about its own earlier turns, words untouched. Three papers, two groups, same shape. The instrument gives you a state; someone decides afterwards whose it is.
 
-**6 · post-6.png**
-The humbling part: every reader of these papers for this board was a model. Each drifted toward what it already believed, another model caught it, then a third review found new errors in the fix. If you assume AI summaries of papers are reliable, the board's own history says otherwise. Board, sources, and every change: [ledger link]
+**Reply to post 5 · no image**
+Every cell, its sources, its grade and its edit history: [ledger link]

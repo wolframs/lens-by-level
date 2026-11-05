@@ -114,6 +114,6 @@ c6='''
 <div class="ln add">+ representing the denial, not a hidden state</div></div>
 <div class="quote">“these vectors do not represent an internalized emotional state, but rather the ‘deflection’ of a plausible emotion”<small>Emotion Concepts and their Function in a Large Language Model, appendix 6.14</small></div>
 <p class="ttl" style="margin:40px 0 0;font-size:40px">Every reader of these papers here was a model. Each drifted toward what it already believed; another model caught it; then a third review found new errors in the fix.</p>'''
-cards=[card(1,c1),card(2,"<img src='../lens-board-lean.png' style='max-height:788px;max-width:100%;display:block;margin:0 auto' alt='the board'>"),card(3,c3),card(4,c4),card(5,c5),card(6,c6)]
+cards=[card(1,c1),card(2,"<img src='../lens-board-lean.png' style='max-height:788px;max-width:100%;display:block;margin:0 auto' alt='the board'>"),card(3,c3),card(4,c4),card(5,c5)]
 page='<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>'+CSS+'</style></head><body>'+''.join(cards)+'</body></html>'
 open(root/'share/thread.html','w').write(page); print('share/thread.html',len(page))
