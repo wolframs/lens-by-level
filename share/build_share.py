@@ -8,24 +8,24 @@ for c in b['cells']: tiers[c['row']][c['tier']]+=1
 esc=lambda s: html.escape(s,quote=False)
 CSS='''
 :root{--bg:#fcfcfb;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;--hair:#e1e0d9;--rule:#c3c2b7;--t3:#104281;--t2:#256abf;--t1:#86b6ef;--acc:#eb6834;
- --font:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+ --font:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--display:var(--font);--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
 body{margin:0;background:#777;font-family:var(--font);color:var(--ink)}
 .card{width:1600px;height:900px;background:var(--bg);position:relative;overflow:hidden;padding:56px 64px;box-sizing:border-box;margin:24px auto;display:flex;flex-direction:column;justify-content:center}
 .sig{position:absolute;right:40px;bottom:28px;font-family:var(--mono);font-size:18px;color:var(--ink-3)}
-.ttl{font-size:38px;font-weight:600;letter-spacing:-.01em;margin:0 0 22px;line-height:1.2}
+.ttl{font-family:var(--display);font-size:38px;font-weight:600;letter-spacing:-.01em;margin:0 0 22px;line-height:1.2}
 .cap{font-size:24px;color:var(--ink-2);margin:0}
 /* chat bits */
 .bub{display:inline-block;max-width:680px;padding:20px 30px;border-radius:24px;font-size:34px;line-height:1.3}
-.bub.u{background:#2f6fd8;color:#fff;border-bottom-right-radius:6px}
+.bub.u{background:#2f6fd8;color:#fffffc;border-bottom-right-radius:6px}
 .bub.a{background:#ececea;color:#0b0b0b;border-bottom-left-radius:6px}
 .who{font-family:var(--mono);font-size:18px;color:var(--ink-3);margin:0 0 6px}
 /* objects row */
 .objs{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.obj{border:2px solid var(--ink);border-radius:16px;padding:22px 24px;min-height:430px;display:flex;flex-direction:column;background:#fff}
-.obj h3{margin:0 0 4px;font-size:30px;font-weight:600}.obj p{margin:0 0 14px;font-size:21px;color:var(--ink-2);line-height:1.3}
+.obj{border:2px solid var(--ink);border-radius:16px;padding:22px 24px;min-height:430px;display:flex;flex-direction:column;background:#fffffe}
+.obj h3{font-family:var(--display);margin:0 0 4px;font-size:30px;font-weight:600}.obj p{margin:0 0 14px;font-size:21px;color:var(--ink-2);line-height:1.3}
 .mini{font-size:19px;line-height:1.35;color:var(--ink-2);flex:1}
 .mini .m{background:#ececea;border-radius:12px;padding:8px 14px;margin:5px 0;display:inline-block;max-width:92%}
-.mini .m.u{background:#2f6fd8;color:#fff;float:right;clear:both}
+.mini .m.u{background:#2f6fd8;color:#fffffc;float:right;clear:both}
 .mini .m.a{float:left;clear:both}
 .bar{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:18px;margin:8px 0}
 .bar i{display:block;height:20px;background:var(--t2);border-radius:3px}
@@ -33,10 +33,10 @@ body{margin:0;background:#777;font-family:var(--font);color:var(--ink)}
 /* callout cells */
 .cells{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:0 0 22px}
 .cell{border-radius:14px;padding:22px 26px;color:#fff;background:var(--t3);position:relative}
-.cell b{display:block;font-size:30px;font-weight:600;margin:0 0 8px;line-height:1.2}
+.cell b{font-family:var(--display);display:block;font-size:30px;font-weight:600;margin:0 0 8px;line-height:1.2}
 .cell i{font-style:normal;font-size:21px;line-height:1.35;opacity:.95}
 .cell u{text-decoration:none;display:block;font-family:var(--mono);font-size:17px;margin-top:12px;opacity:.9}
-.cell .lbl{position:absolute;top:-16px;left:22px;background:var(--acc);color:#fff;font-weight:600;font-size:20px;padding:5px 14px;border-radius:8px}
+.cell .lbl{position:absolute;top:-16px;left:22px;background:var(--acc);color:#fffffd;font-weight:600;font-size:20px;padding:5px 14px;border-radius:8px}
 /* diff */
 .diff{border:2px solid var(--hair);border-radius:14px;overflow:hidden;font-family:var(--mono);font-size:31px;line-height:1.55}
 .diff .hd{background:#f1f1ee;padding:14px 24px;font-size:22px;color:var(--ink-2);border-bottom:1px solid var(--hair)}
@@ -84,8 +84,8 @@ for r in rows:
     y+=74
 leg=''.join(f'<rect x="{340+i*230}" y="{y+16}" width="20" height="20" rx="4" fill="{col[t]}" stroke="{"#c3c2b7" if t==0 else col[t]}" stroke-width="2"/><text x="{340+i*230+30}" y="{y+33}" font-size="20" fill="#52514e">{lab[t]}</text>' for i,t in enumerate((3,2,1,0)))
 ry=rowy['relational']+29; hy=rowy['hedonic']+29
-ann=f'''<defs><marker id="m4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#eb6834"/></marker></defs>
-<g stroke="#eb6834" stroke-width="3" fill="none"><path d="M1330,{hy} L1180,{hy}" marker-end="url(#m4)"/><path d="M1330,{ry} L1160,{ry}" marker-end="url(#m4)"/></g>
+ann=f'''<defs><marker id="m4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#eb6835"/></marker></defs>
+<g stroke="#eb6835" stroke-width="3" fill="none"><path d="M1330,{hy} L1180,{hy}" marker-end="url(#m4)"/><path d="M1330,{ry} L1160,{ry}" marker-end="url(#m4)"/></g>
 <g font-size="22" fill="#a33f12" font-weight="600"><text x="1345" y="{hy-10}">the row a welfare verdict needs:</text><text x="1345" y="{hy+18}">no reviewed study, one argument</text><text x="1345" y="{ry-10}">the only row built from real people:</text><text x="1345" y="{ry+18}">as well measured as any</text></g>'''
 c4=f'<p class="ttl">Cells per row, by what stands behind them</p><svg viewBox="0 0 1700 {y+60}" style="width:100%;height:auto" role="img" aria-label="Seven rows of four cells each, coloured by evidence tier, with two annotations">{"".join(parts)}{leg}{ann}</svg>'
 # ---------- 5: three readouts as the things they are
