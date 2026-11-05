@@ -13,7 +13,7 @@ const { chromium } = require('playwright'); const fs=require('fs'); const path=r
  // 2) render the cards
  let html=fs.readFileSync(path.join(root,'share','thread.html'),'utf8');
  const img='data:image/png;base64,'+fs.readFileSync(path.join(root,'share','_emph.png')).toString('base64');
- html=html.replace("<div id='emph'></div>",`<img src="${img}" style="max-height:500px;max-width:100%;border:1px solid #e1e0d9;border-radius:8px" alt="board with two cells highlighted">`);
+ html=html.replace(/<div id="emph"[^>]*><\/div>/,`<div style="flex:1"><img src="${img}" style="max-height:500px;max-width:100%;border:1px solid #e1e0d9;border-radius:8px;display:block" alt="board with two cells highlighted"></div>`);
  const lean='data:image/png;base64,'+fs.readFileSync(path.join(root,'lens-board-lean.png')).toString('base64');
  html=html.replace("src='../lens-board-lean.png'",`src="${lean}"`);
  ctx=await br.newContext({viewport:{width:1700,height:1000},deviceScaleFactor:1}); p=await ctx.newPage();
