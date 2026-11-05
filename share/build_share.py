@@ -72,7 +72,7 @@ c5='''<svg viewBox="0 0 1440 560" role="img" aria-label="Three instruments each 
 <rect x="960" y="210" width="460" height="80" rx="12" fill="#256abf"/><text x="980" y="244" fill="#fff" font-weight="600">flips sign under an evil persona</text><text x="980" y="274" fill="#fff" font-size="20">Gilg et al., 2026 · preprint, one of two models</text>
 <rect x="20" y="360" width="450" height="80" rx="12" fill="#fcfcfb" stroke="#c3c2b7" stroke-width="2"/><text x="40" y="394" font-weight="600">the question “who are you?”</text><text x="40" y="424" font-size="20" fill="#52514e">asked at the end of one conversation</text>
 <rect x="520" y="360" width="390" height="80" rx="12" fill="#86b6ef"/><text x="540" y="410" font-weight="600">“a ghost in the machine”</text>
-<rect x="960" y="360" width="460" height="80" rx="12" fill="#86b6ef"/><text x="980" y="394" fill="#0b0b0b" font-weight="600">flips when its stored past is nudged</text><text x="980" y="424" fill="#0b0b0b" font-size="20">words untouched · Beckmann &amp; Butlin, 2026 · preliminary</text>
+<rect x="960" y="360" width="460" height="80" rx="12" fill="#86b6ef"/><text x="980" y="394" fill="#0b0b0b" font-weight="600">flips when its stored past is nudged</text><text x="980" y="424" fill="#0b0b0b" font-size="18">words untouched · Beckmann &amp; Butlin 2026 · preliminary</text>
 <text x="720" y="530" text-anchor="middle" font-size="27" fill="#0b0b0b" font-weight="600">The instrument gives you a state. Someone decides afterwards whose it is.</text>
 </g></svg>'''
 # --- card 6: before / after
