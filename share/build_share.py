@@ -98,7 +98,7 @@ cards=[
  card(2,'the board','Seven ways of looking, four things to look at','',"<img src='../lens-board-lean.png' style='max-height:560px;max-width:100%;border:1px solid #e1e0d9;border-radius:8px' alt='the board'>"),
  card(3,'where fights come from','Both can be right. They are not about the same object.','',"<div id='emph'></div>"),
  card(4,'the evidence is lopsided','What is measured, and what is only argued','Cells per row, by how much stands behind them. The row built from real people is as well measured as any. The row a welfare verdict needs is the thinnest.',c4),
- card(5,'the part that got me','Readouts have no owner','Three papers, two groups, same shape.',c5),
+ card(5,'the part that got me','Readouts don’t come with an owner','Three papers, two groups, same shape.',c5),
  card(6,'the humbling part','Every reader here was a model','',c6),
 ]
 page='<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>'+CSS+'</style></head><body>'+''.join(cards)+'</body></html>'

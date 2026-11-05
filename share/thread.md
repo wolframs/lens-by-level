@@ -15,7 +15,7 @@ First thing the grid does: it shows where fights come from. "It's just predictin
 Second thing: the evidence is lopsided. The one row built from real people is now as well measured as anything on the board: attachment, trust, feeling heard. The thinnest is the one a welfare verdict would lean on: whether anything is felt, by what, for how long. We know a lot about us and little about the thing.
 
 **5 · post-5.png**
-Third thing, the one that got me: readouts have no owner. An emotion reading inside the model follows whoever is being written. A "what it likes" reading flips sign when a villain persona is active, on one of two models. Its answer to "who are you?" flips when you nudge what it stored about its own earlier turns, words untouched. Three papers, two groups, same shape. The instrument gives you a state; someone decides afterwards whose it is.
+Third thing, the one that got me: readouts don't come with an owner. An emotion reading inside the model follows whoever is being written. A "what it likes" reading flips sign when a villain persona is active, on one of two models. Its answer to "who are you?" flips when you nudge what it stored about its own earlier turns, words untouched. Three papers, two groups, same shape. The instrument gives you a state; someone decides afterwards whose it is.
 
 **6 · post-6.png**
 The humbling part: every reader of these papers for this board was a model. Each drifted toward what it already believed, another model caught it, then a third review found new errors in the fix. If you assume AI summaries of papers are reliable, the board's own history says otherwise. Board, sources, and every change: [ledger link]
