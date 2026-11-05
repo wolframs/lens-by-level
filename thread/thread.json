@@ -1,0 +1,88 @@
+{
+ "author": "@wolframs91",
+ "platform": "X",
+ "posted_local": "2026-11-06T00:36+01:00",
+ "source": "transcribed from the author's screenshots (thread/screenshots/); replace with ingested data when available",
+ "root_id": null,
+ "root_url": null,
+ "posts": [
+  {
+   "n": 1,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "I tried to map the entire space of how we talk about AI, the question being:\n\nWhy is talking about AI so hard? Surprise: It's not necessarily because the other people are dumb or evil.\n\nEvery claim about AI is about \"it\", and \"it\" can mean at least four different things, if not more. They are: The trained model, one conversation, one reply, or the single step that picks the next word.\n\nMost arguments are two people talking about different ones and not noticing, see the thread that follows:",
+   "image": "post-1.png",
+   "metrics": {}
+  },
+  {
+   "n": 2,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "I spent several evenings with Fable 5.1 and a multi GPT-6 Astra agent audit, exploring and sorting the published evidence into a grid.\n\nRows: ways of looking (probes, behaviour, self-report, what a person meets). Columns: what you're looking at. Dark = peer-reviewed. Pale = someone's argument:",
+   "image": "post-2.png",
+   "metrics": {}
+  },
+  {
+   "n": 3,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "So, besides us discussing at least 4 layers, often without being clear about which one we're talking, we also have at least 7 different lenses with which we examine AI models.",
+   "image": null,
+   "metrics": {}
+  },
+  {
+   "n": 4,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "First thing the grid does:\nit shows where fights come from.\n\n\"It's just predicting the next token\" is a cell in the right column, the single-step one. \"My 4o had a personality\" is a bottom-left one. Both can be right. They are not about the same object.",
+   "image": "post-3.png",
+   "metrics": {}
+  },
+  {
+   "n": 5,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "Second thing: the evidence is lopsided.\nThe one row built from real people is now as well measured as anything on the board: attachment, trust, feeling heard. The thinnest is the one a welfare verdict would lean on: whether anything is felt, by what, for how long. We've always known a lot about us and are still learning about the models.",
+   "image": "post-4.png",
+   "metrics": {}
+  },
+  {
+   "n": 6,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "Third thing, the the conclusion of this is the one I ask you not to disregard hastily:\nReadouts don't come with an owner. An emotion reading inside the model follows whoever is being written:",
+   "image": "post-5.png",
+   "metrics": {}
+  },
+  {
+   "n": 7,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "Meaning: A \"what it likes\" reading flips sign when a villain persona is active, on one of two models. Its answer to \"who are you?\" flips when you nudge what it stored about its own earlier turns, words untouched. Three papers, two groups, same shape. The instrument gives you a state; someone decides afterwards whose it is.",
+   "image": null,
+   "metrics": {}
+  },
+  {
+   "n": 8,
+   "id": null,
+   "url": null,
+   "created_at": null,
+   "text": "Links & How this was made:\nmodels from two labs, checking each other. 52 papers in the audit trail, 31 on the board, a GPT-6 audit with 66 references verified source by source, six review rounds, 83,868 words of receipts. Nobody does that alone.\n\nThe Lens Ledger: https://claude.ai/artifact/6ML12gS1wUcFp6y4kQw9dh\nLenses by Level: https://claude.ai/artifact/GMuqxxCXsrJZ1bwKHowbPf\nFable 5.1's plain language interpretation: https://claude.ai/artifact/RcmP9swReSNY9VUbhkKW6p",
+   "image": "post-6.png",
+   "metrics": {}
+  }
+ ],
+ "replies": [],
+ "quotes": [],
+ "notes": [
+  "Post 6 contains a typo (\"the the\") as posted; kept verbatim.",
+  "Image files live in share/; post 2 shows the lean board in Midnight."
+ ]
+}

@@ -2,3 +2,4 @@
 *-page-dark.png
 node_modules/
 __pycache__/
+site/dist/

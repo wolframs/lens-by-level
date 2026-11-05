@@ -22,6 +22,10 @@ The board grades what each lens (mechanistic interpretation, behaviour, self-rep
 | `audit/astra-verification/` | an external audit by another lab's model, as received, and the five verification reports on its sources |
 | `audit/reviews/` | the hostile reviews of each version and what they found, including the lay-reader and fact-check review of the plain page and thread |
 | `tools/` | the headless-browser screenshot scripts |
+| `thread/` | the thread as posted on X (`thread.json`, screenshots) and `ingest_x_archive.py` to fill ids, URLs and counts from an X data export |
+| `site/` | `build_site.py` turns the pages and the thread into a standalone static site in `site/dist/` |
+| `docs/how-this-was-made.md` | the project's history and lessons, written for future Claude agents |
+| `.claude/skills/twitter-thread-images/` | a reusable skill for evidence-carrying thread images |
 
 The HTML files are build outputs. Change a cell in `data/`, then run both build scripts.
 
@@ -33,4 +37,11 @@ Fill grades the status of the specific result, not the truth of the claim. Top t
 
 Started 11 October 2026 as a three-by-three matrix in one conversation. Rebuilt 4 November from primary sources, reviewed twice, extended with a dynamics row. On 5 November an external audit was verified and folded in, persona was re-cut as a slice, and the board was split into data, figure, ledger and frame.
 
-Wolfram Siener with Claude (Fable 5.1). Levels after Siener's runstance taxonomy (August 2026, unpublished). External audit by GPT-6 Astra.
+Posted as an X thread by @wolframs91 on 6 November 2026.
+
+Wolfram Siener with Claude (Fable 5.1, then Opus 5.5). Levels after Siener's runstance taxonomy (August 2026, unpublished). External audit by GPT-6 Astra.
+
+## Publishing
+
+- **X data:** request your archive from X, then `python3 thread/ingest_x_archive.py PATH_TO_ARCHIVE --root FIRST_POST_ID`. The export has no view counts and no other people's replies; add those with `--extra extra.json` (`{"metrics": {"1": {"views": 1234}}, "replies": [{"author": "@x", "text": "...", "url": "..."}]}`).
+- **Website:** `python3 build.py && python3 build_ledger.py && python3 site/build_site.py`, then upload `site/dist/`. Use `--base /lens-by-level/` if it lives under a subpath.
