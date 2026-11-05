@@ -3,7 +3,7 @@
 Six posts, one image each (`share/post-N.png`). Post 6 links the ledger once it is shared.
 
 **1 · post-1.png**
-Why is talking about AI so hard? Not because people are dumb. "Does it want anything?" is four questions wearing one sentence: about the trained model, one conversation, one reply, or the single step that picks the next word. Most arguments are two people answering different ones and not noticing.
+Why is talking about AI so hard? Not because people are dumb. Every claim about AI is about "it", and "it" can mean four things: the trained model, one conversation, one reply, or the single step that picks the next word. Most arguments are two people talking about different ones and not noticing.
 
 **2 · post-2.png**
 I spent two days with Claude, plus an audit from a GPT-6 run, sorting the published evidence into a grid. Rows: ways of looking (probes, behaviour, self-report, what a person meets). Columns: what you're looking at. Dark = peer-reviewed. Pale = someone's argument.
