@@ -45,6 +45,17 @@ body{margin:0;background:#777;font-family:var(--font);color:var(--ink)}
 .diff .ctx{color:var(--ink-3)}
 .quote{margin:30px 0 0;padding:20px 26px;border-left:4px solid var(--t3);font-size:28px;line-height:1.4;color:var(--ink-2);font-style:italic}
 .quote small{display:block;font-style:normal;font-family:var(--mono);font-size:17px;color:var(--ink-3);margin-top:8px}
+
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin:0 0 26px}
+.stats div{border-top:3px solid #256abf;padding-top:12px}
+.stats b{display:block;font-family:var(--display);font-size:64px;font-weight:600;letter-spacing:-.02em;line-height:1}
+.stats span{display:block;font-size:20px;color:var(--ink-2);margin-top:8px;line-height:1.3}
+.tree{font-family:var(--mono);font-size:19px;line-height:1.55;border:2px solid var(--hair);border-radius:14px;padding:14px 22px;column-count:2;column-gap:40px;background:#fffffe}
+.tree .tr{display:flex;gap:12px;white-space:pre;break-inside:avoid}
+.tree .tr .n{margin-left:auto;color:var(--ink-3)}
+.tree .tr.d{color:var(--ink);font-weight:500;margin-top:6px}
+.tree .tr.d .n{color:#a33f12}
+.tree .nt{display:none}
 '''
 def card(n,body,sig='@wolframs91 · Lens by Level'):
     return f'<section class="card" id="c{n}">{body}</section>'
@@ -114,6 +125,27 @@ c6='''
 <div class="ln add">+ representing the denial, not a hidden state</div></div>
 <div class="quote">“these vectors do not represent an internalized emotional state, but rather the ‘deflection’ of a plausible emotion”<small>Emotion Concepts and their Function in a Large Language Model, appendix 6.14</small></div>
 <p class="ttl" style="margin:40px 0 0;font-size:40px">Every reader of these papers here was a model. Each drifted toward what it already believed; another model caught it; then a third review found new errors in the fix.</p>'''
-cards=[card(1,c1),card(2,"<img src='../lens-board-lean.png' style='max-height:788px;max-width:100%;display:block;margin:0 auto' alt='the board'>"),card(3,c3),card(4,c4),card(5,c5)]
+
+# ---------- 6: the method, as its receipts (counted from the repo at build time)
+import glob, os, re as _re
+def _words(f): return len(open(f).read().split())
+_aud=sorted(glob.glob(str(root/'audit/**/*.md'),recursive=True))
+_tot=sum(_words(f) for f in _aud)
+_src=[x for x in json.load(open(root/'data/sources.json'))['sources'] if x['tag'] not in ('own probe','architecture','product')]
+_ax=set()
+for f in _aud: _ax|=set(_re.findall(r'(?:arXiv[: ]?|arxiv\.org/(?:abs|html|pdf)/|hf://papers/)(\d{4}\.\d{5})',open(f).read()))
+_refs=len(_re.findall(r'^\[[^\]]+\]: https?://',open(root/'audit/astra-verification/astra-audit-as-received.md').read(),_re.M))
+_nrev=len(glob.glob(str(root/'audit/reviews/*.md')))
+_groups=[('source-audits','one agent per source, primary text'),('astra-verification','GPT-6 audit, then checked source by source'),('reviews','adversarial reviews of each version')]
+_rows=''
+for d,note in _groups:
+    fs=sorted(glob.glob(str(root/f'audit/{d}/*.md')))
+    _rows+=f'<div class="tr d"><span>audit/{d}/</span><span class="n">{len(fs)} files</span><span class="nt">{note}</span></div>'
+    for f in fs:
+        _rows+=f'<div class="tr"><span>  {os.path.basename(f)}</span><span class="n">{_words(f):,} words</span></div>'
+_stats=[(str(len(_ax)),'papers in the audit trail'),(str(len(_src)),'cited on the board'),(str(_refs),'references in an outside GPT-6 audit'),(str(_nrev),'review rounds'),(f'{_tot:,}','words of receipts')]
+c6='<p class="ttl" style="font-size:44px;margin:0 0 30px">Models from two labs, reading in parallel and checking each other.</p><div class="stats">'+''.join(f'<div><b>{a}</b><span>{esc(z)}</span></div>' for a,z in _stats)+'</div><div class="tree">'+_rows+'</div>'
+
+cards=[card(1,c1),card(2,"<img src='../lens-board-lean.png' style='max-height:788px;max-width:100%;display:block;margin:0 auto' alt='the board'>"),card(3,c3),card(4,c4),card(5,c5),card(6,c6)]
 page='<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>'+CSS+'</style></head><body>'+''.join(cards)+'</body></html>'
 open(root/'share/thread.html','w').write(page); print('share/thread.html',len(page))

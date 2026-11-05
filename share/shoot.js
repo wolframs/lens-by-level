@@ -27,6 +27,6 @@ const LEDGER_VARS={midnight:{css:`:root{--bg:#0e1320!important;--surface:#141b2b
  html=html.replace(/src='\.\.\/lens-board-lean\.png' style='[^']*'/,`src="${b64(lean)}" style="max-height:788px;max-width:100%;display:block;margin:0 auto;border-radius:8px"`);
  ctx=await br.newContext({viewport:{width:1700,height:1000}}); p=await ctx.newPage();
  await p.setContent(html,{waitUntil:'networkidle'}); await p.evaluate(()=>document.fonts.ready);
- for(let i=1;i<=5;i++){const el=await p.$('#c'+i); await el.screenshot({path:path.join(root,'share',`post-${i}.png`)});}
+ for(let i=1;i<=6;i++){const el=await p.$('#c'+i); await el.screenshot({path:path.join(root,'share',`post-${i}.png`)});}
  await br.close(); fs.unlinkSync(emph); fs.unlinkSync(lean); console.log('rendered 6 cards', theme||'(base)');
 })();
