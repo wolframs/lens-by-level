@@ -2,6 +2,12 @@
 
 Seven ways of looking at a language model, graded by evidence across four levels of description.
 
+**Read it at [wsiener.dev/lens-by-level](https://wsiener.dev/lens-by-level/)**: the [ledger](https://wsiener.dev/lens-by-level/ledger/) (click any cell for its sources, grade and history), the [plain-language version](https://wsiener.dev/lens-by-level/plain/), the [frame](https://wsiener.dev/lens-by-level/frame/) and the [thread](https://wsiener.dev/lens-by-level/thread/).
+
+![Two claims about AI, "It's just predicting the next token" and "My 4o had a real personality", sit on different things the word "it" can mean: the trained model, one conversation, one reply, one step](share/post-1.png)
+
+Why is talking about AI so hard? Every claim about AI is about "it", and "it" can mean the trained model, one conversation, one reply, or the single step that picks the next word. Most arguments are two people talking about different ones without noticing. The board crosses those four levels with seven ways of looking and grades what the published evidence can say in each cell.
+
 The board grades what each lens (mechanistic interpretation, behaviour, self-report, dynamics, hedonic theory, preference theory, relation) can currently say about each level (checkpoint, one conversation, one turn, one forward pass), with persona as a cross-cutting marker rather than a level. Every cell carries a source tag and a tier; every source carries the level of verification reached.
 
 ## Pieces
@@ -41,7 +47,11 @@ Posted as an X thread by @wolframs91 on 6 November 2026.
 
 Wolfram Siener with Claude (Fable 5.1, then Opus 5.5). Levels after Siener's runstance taxonomy (August 2026, unpublished). External audit by GPT-6 Astra.
 
+## Citing
+
+[`CITATION.cff`](CITATION.cff) has the citation; GitHub shows it under "Cite this repository".
+
 ## Publishing
 
 - **X data:** request your archive from X, then `python3 thread/ingest_x_archive.py PATH_TO_ARCHIVE --root FIRST_POST_ID`. The export has no view counts and no other people's replies; add those with `--extra extra.json` (`{"metrics": {"1": {"views": 1234}}, "replies": [{"author": "@x", "text": "...", "url": "..."}]}`).
-- **Website:** `python3 build.py && python3 build_ledger.py && python3 site/build_site.py`, then upload `site/dist/`. Use `--base /lens-by-level/` if it lives under a subpath.
+- **Website:** `python3 build.py && python3 build_ledger.py && python3 site/build_site.py`, then upload `site/dist/`. Use `--base /lens-by-level/` if it lives under a subpath and `--url` with its public address for link previews. Fonts are served from `site/fonts/` (refresh with `site/fetch_fonts.py`); no page loads anything from a third party.

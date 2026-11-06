@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this board, its data or its audit trail, please cite it as below."
+title: "Lens by Level: seven ways of looking at a language model, graded by evidence across four levels of description"
+type: dataset
+authors:
+  - family-names: Siener
+    given-names: Wolfram
+date-released: 2026-11-06
+version: "9.2"
+url: "https://wsiener.dev/lens-by-level/"
+repository-code: "https://github.com/wolframs/lens-by-level"
+license: MIT
+keywords:
+  - language models
+  - AI welfare
+  - interpretability
+  - levels of description
+  - evidence synthesis
+abstract: >-
+  An evidence-graded board of 28 cells: seven lenses (mechanistic interpretation,
+  behaviour, self-report, dynamics, hedonic theory, preference theory, relation)
+  against four levels of a language model (checkpoint, one conversation, one turn,
+  one forward pass), with persona as a cross-cutting marker. Every cell carries a
+  source tag and an evidence tier; every source carries the level of verification
+  reached. Built with Claude (Fable 5.1, Opus 5.5) and checked by an external
+  GPT-6 Astra audit, with the full audit trail.
