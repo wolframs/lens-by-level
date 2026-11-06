@@ -6,16 +6,38 @@ This wraps each in a full HTML document, rewrites links between the artifacts to
 adds a thread page from thread/thread.json and an index. Upload site/dist/ as-is to any static host.
 
   python3 build.py && python3 build_ledger.py   # refresh the pages from data first
-  python3 site/build_site.py [--base /lens-by-level/]
+  python3 site/build_site.py [--base /lens-by-level/] [--url https://wsiener.dev/lens-by-level/]
+
+Fonts come from site/fonts/ (vendored by site/fetch_fonts.py), so no page loads anything from Google.
+--url is the site's public address; with it every page gets absolute og:url and og:image for link previews.
 """
 import argparse, html, json, pathlib, re, shutil
 root=pathlib.Path(__file__).resolve().parent.parent
 ART={'6ML12gS1wUcFp6y4kQw9dh':'ledger','GMuqxxCXsrJZ1bwKHowbPf':'board','98W62EWWBAnY8wec9iooEY':'frame','RcmP9swReSNY9VUbhkKW6p':'plain'}
 PAGES=[('ledger','ledger.html'),('board','lens-by-level.html'),('frame','frame.html'),('plain','plain.html')]
+TITLE={'':'Lens by Level','ledger':'The ledger · Lens by Level','board':'The full board · Lens by Level','frame':'The frame · Lens by Level',
+       'plain':'Lens by Level, in plain words','thread':'The thread · Lens by Level'}
+DESC={'':'Seven ways of looking at a language model, graded by evidence across four levels of description, with every source and every correction on the record.',
+      'ledger':'The board: seven lenses by four levels, 28 cells. Open any cell for its sources, its grade and its history.',
+      'board':'Every cell of the Lens by Level board at full length, with its sources.',
+      'frame':'What the Lens by Level board is a picture of, the experiments that would settle its open cells, and how it was made.',
+      'plain':'Why talking about AI is so hard: "it" can mean the trained model, one conversation, one reply or one step. The short version, no jargon.',
+      'thread':'The Lens by Level thread as posted on X, with its images.'}
+FONTS=re.compile(r'<link[^>]*href="https://fonts\.googleapis\.com/[^"]*"[^>]*>')
 esc=lambda s: html.escape(s or '',quote=True)
-def wrap(fragment, extra_head=''):
+def wrap(fragment, slug, url=''):
+    up='../' if slug else ''
+    fragment=FONTS.sub(f'<link rel="stylesheet" href="{up}fonts/fonts.css">',fragment)
+    fragment=re.sub(r'<title>[^<]*</title>',f'<title>{esc(TITLE[slug])}</title>',fragment,count=1)
+    meta=(f'<meta name="description" content="{esc(DESC[slug])}">\n<meta property="og:type" content="article">\n'
+          f'<meta property="og:site_name" content="Lens by Level">\n<meta property="og:title" content="{esc(TITLE[slug])}">\n'
+          f'<meta property="og:description" content="{esc(DESC[slug])}">\n<meta name="twitter:card" content="summary_large_image">\n')
+    if url:
+        meta+=(f'<link rel="canonical" href="{esc(url+(slug+"/" if slug else ""))}">\n<meta property="og:url" content="{esc(url+(slug+"/" if slug else ""))}">\n'
+               f'<meta property="og:image" content="{esc(url)}og.png">\n<meta property="og:image:width" content="1600">\n<meta property="og:image:height" content="900">\n'
+               '<meta property="og:image:alt" content="Two claims about AI, and the four things the word it can mean">\n')
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
-            '<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n'+extra_head+'</head>\n<body>\n'+fragment+'\n</body>\n</html>\n')
+            +meta+'<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n</head>\n<body>\n'+fragment+'\n</body>\n</html>\n')
 def relink(s):
     for aid,slug in ART.items():
         s=s.replace(f'https://claude.ai/artifact/{aid}',f'../{slug}/')
@@ -66,22 +88,25 @@ img{display:block;border-radius:10px;margin:0 0 28px;border:1px solid var(--hair
 <a class="c" href="frame/"><b>The frame</b><span>What the board is a picture of, and how it was made.</span></a>
 <a class="c" href="thread/"><b>The thread</b><span>As posted on X, with its images.</span></a>
 <a class="c" href="board/"><b>Full board</b><span>Every cell at full length.</span></a>
-</div><p class="f">Wolfram Siener with Claude (Fable 5.1, Opus 5.5) · external audit by GPT-6 Astra · November 2026</p></div>'''
+</div><p class="f">Wolfram Siener with Claude (Fable 5.1, Opus 5.5) · external audit by GPT-6 Astra · November 2026<br>
+<a href="https://github.com/wolframs/lens-by-level">Data, sources and audit trail</a> · <a href="https://wsiener.dev/">wsiener.dev</a></p></div>'''
 def main():
-    a=argparse.ArgumentParser(); a.add_argument('--base',default=''); o=a.parse_args()
+    a=argparse.ArgumentParser(); a.add_argument('--base',default=''); a.add_argument('--url',default=''); o=a.parse_args()
+    if o.url and not o.url.endswith('/'): o.url+='/'
     dist=root/'site'/'dist'
     if dist.exists(): shutil.rmtree(dist)
     for slug,f in PAGES:
-        (dist/slug).mkdir(parents=True); (dist/slug/'index.html').write_text(wrap(relink((root/f).read_text())))
+        (dist/slug).mkdir(parents=True); (dist/slug/'index.html').write_text(wrap(relink((root/f).read_text()),slug,o.url))
     d=json.load(open(root/'thread'/'thread.json'))
     (dist/'thread'/'img').mkdir(parents=True)
     for p in d['posts']:
         if p.get('image'): shutil.copy(root/'share'/p['image'],dist/'thread'/'img'/p['image'])
-    (dist/'thread'/'index.html').write_text(wrap(thread_page(d)))
-    (dist/'index.html').write_text(wrap(index_page()))
+    (dist/'thread'/'index.html').write_text(wrap(thread_page(d),'thread',o.url))
+    (dist/'index.html').write_text(wrap(index_page(),'',o.url))
+    shutil.copytree(root/'site'/'fonts',dist/'fonts'); shutil.copy(root/'share'/'post-1.png',dist/'og.png')
     if o.base:
         for f in dist.rglob('index.html'):
             s=f.read_text(); f.write_text(s.replace('<head>\n',f'<head>\n<base href="{o.base}{f.parent.relative_to(dist).as_posix()+"/" if f.parent!=dist else ""}">\n',1))
-    left=[str(f.relative_to(dist)) for f in dist.rglob('*.html') if 'claude.ai/artifact' in f.read_text() and 'thread' not in f.parts]
-    print('built',dist,'·',sum(1 for _ in dist.rglob('*') if _.is_file()),'files','· remaining artifact links:',left or 'none')
+    left=[str(f.relative_to(dist)) for f in dist.rglob('*.html') if ('claude.ai/artifact' in f.read_text() or 'fonts.googleapis' in f.read_text()) and 'thread' not in f.parts]
+    print('built',dist,'·',sum(1 for _ in dist.rglob('*') if _.is_file()),'files','· remaining artifact or Google Fonts links:',left or 'none')
 if __name__=='__main__': main()
