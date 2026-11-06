@@ -1,6 +1,6 @@
 # Source verification: "Relational" row (audit §7, "What changes the picture" item 4, "What did people lose?")
 
-Verifier run: 5 November 2026. Audit file: /root/.claude/uploads/6e393e2b-f94c-5db4-9915-1371368ee380/a00a1bfa-seven-lenses-evidence-audit.md
+Verifier run: 5 November 2026. Audit file: audit/astra-verification/astra-audit-as-received.md
 
 ## Network conditions (determines evidence level)
 

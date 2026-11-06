@@ -20,7 +20,7 @@ Note: the Anthropic blog post uses a different subtitle: "The assistant axis: si
 
 **Authors and affiliations (from the paper header, v1):**
 > "Christina Lu 1 2 3 Jack Gallagher 4 Jonathan Michala 1 Kyle Fish 4 Jack Lindsey 4 *
-> 1 MATS 2 Anthropic Fellows Program 3 University of Oxford 4 Anthropic Correspondence: christina.lu@cs.ox.ac.uk, jacklindsey@anthropic.com Code and full transcripts of case studies available at https://github.com/safety-research/assistant-axis"
+> 1 MATS 2 Anthropic Fellows Program 3 University of Oxford 4 Anthropic Correspondence: (address in the source), (address in the source) Code and full transcripts of case studies available at https://github.com/safety-research/assistant-axis"
 
 So: Christina Lu (MATS; Anthropic Fellows Program; University of Oxford), Jack Gallagher (Anthropic), Jonathan Michala (MATS), Kyle Fish (Anthropic), Jack Lindsey (Anthropic; asterisk = corresponding/senior). HF metadata lists the same five names in the same order. Acknowledgments: "This research was conducted under the MATS and Anthropic Fellows programs."
 

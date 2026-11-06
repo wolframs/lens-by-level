@@ -1,6 +1,6 @@
 # Thread: why talking about AI is hard
 
-Six posts, one image each (`share/post-N.png`). Post 6 links the ledger once it is shared.
+The pre-posting draft: six posts, one image each (`share/post-N.png`). The thread as posted, eight posts in his own words, is `thread/thread.json`.
 
 **1 · post-1.png**
 Why is talking about AI so hard? Not because people are dumb. Every claim about AI is about "it", and "it" can mean four things: the trained model, one conversation, one reply, or the single step that picks the next word. Most arguments are two people talking about different ones and not noticing.

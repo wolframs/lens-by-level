@@ -1,6 +1,6 @@
 # Hostile review, round two: "Six lenses on five levels of a language model", v4 (4 Nov 2026)
 
-Reviewed: `/home/user/lens-matrix/lens-by-level.html` (whole file), the three v4 screenshots (`v4-fig-light.png`, `v4-fig-dark.png`, `v4-light-1240.png`), the round-one report `review_v3.md`, and the six audit files as ground truth. Cells are named row × column. Contrast ratios below were computed from the hex values in the v4 CSS (WCAG formula), not eyeballed.
+Reviewed: `lens-by-level.html` (whole file), the three v4 screenshots (`v4-fig-light.png`, `v4-fig-dark.png`, `v4-light-1240.png`), the round-one report `review_v3.md`, and the six audit files as ground truth. Cells are named row × column. Contrast ratios below were computed from the hex values in the v4 CSS (WCAG formula), not eyeballed.
 
 Headline verdict: v4 is a real revision, not a patch. Of the 58 round-one items, 46 are resolved outright, 6 partly, 6 not resolved; of the 6 not resolved, 5 are declines I would accept and 1 (the inverted ramp with an identical hex across themes, D2) I would not. Part B finds nothing that misstates a source at the HIGH level. The residual list is short: one tag the key does not expand, one qualifier attributed to the wrong critic, one verification claim slightly stronger than the audit supports, one headline the page's own notes undercut, and the dark-mode ramp.
 

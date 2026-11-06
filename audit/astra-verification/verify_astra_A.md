@@ -1,7 +1,7 @@
 # Source verification: four papers cited in the "Seven lenses" audit (5 Nov 2026)
 
 Verifier: Claude (source-verification subagent), 5 November 2026.
-Audit file checked: `/root/.claude/uploads/6e393e2b-f94c-5db4-9915-1371368ee380/a00a1bfa-seven-lenses-evidence-audit.md` (items 1 and 3 of "What changes the picture", sections 4, 5, 6, reference list).
+Audit file checked: `audit/astra-verification/astra-audit-as-received.md` (items 1 and 3 of "What changes the picture", sections 4, 5, 6, reference list).
 
 ## Access summary (read this first)
 
@@ -21,7 +21,7 @@ Legend: SUPPORTED / PARTLY / NOT SUPPORTED / COULD NOT ACCESS.
 ## 1. Berg & Kaiser, arXiv 2609.35591 — "Language Models Act on Hidden Valence"
 
 ### Citation facts
-- Title: *Language Models Act on Hidden Valence*. Authors: Cameron Berg (Reciprocal Research) and Caspar Kaiser (University of Warwick / WBS; repo gives `caspar.kaiser@wbs.ac.uk`). Source: repo README ("by Cameron Berg and Caspar Kaiser (2026)"); affiliations from search snippets of the arXiv listing.
+- Title: *Language Models Act on Hidden Valence*. Authors: Cameron Berg (Reciprocal Research) and Caspar Kaiser (University of Warwick / WBS; repo gives `(address in the source)`). Source: repo README ("by Cameron Berg and Caspar Kaiser (2026)"); affiliations from search snippets of the arXiv listing.
 - Versions: search snippet of arXiv listing: "Submitted on 28 Sep 2026 (v1), last revised 4 Oct 2026 (this version, v2)", cs.CL. The audit cites v2; consistent.
 - Venue status: arXiv preprint only. No proceedings or journal found. Not peer-reviewed as far as I can tell.
 - Models (primary: `tables/table1.tex`): ten checkpoints = OLMo-2-32B at four stages (Base, SFT, DPO, Instruct; `allenai/OLMo-2-0325-32B[-SFT/-DPO/-Instruct]`), Qwen2.5-32B-Instruct, Qwen3-14B, Qwen3-32B, Mistral-Small-24B-Instruct-2501, Gemma-3-27B-it, Llama-3.1-8B-Instruct. Steering applied at the middle residual layer ("In all cases, the middle layer was chosen"). That is seven model lineages from five families (AI2, Qwen, Mistral, Google, Meta), matching "seven open-weight models from five families" in the abstract snippet.
@@ -182,4 +182,4 @@ Dynamics/Runstance (and Behaviour/Runstance): in one checkpoint (Gemma 3 27B IT,
 | 4e | No transfer to arithmetic check | COULD NOT ACCESS |
 
 ## Files kept in scratchpad
-- `/tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/bk_exposure.csv` — Berg & Kaiser per-experiment design notes (primary, from the authors' repo).
+- `scratchpad/bk_exposure.csv` — Berg & Kaiser per-experiment design notes (primary, from the authors' repo).

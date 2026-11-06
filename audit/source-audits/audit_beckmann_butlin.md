@@ -5,14 +5,14 @@ Audit date: 2026-11-04.
 ## 0. Provenance of what was read (important caveat)
 
 - arxiv.org (abs, pdf, html), philarchive, semanticscholar, huggingface.co, alphaxiv and web.archive.org are all unreachable from this session (DNS / proxy 403). WebFetch could not be used on any of them.
-- The paper text audited here is the **arXiv v2 PDF (stamped "arXiv:2604.17031v2 [cs.CL] 12 May 2026", 27 pages, Creator "arXiv GenPDF")**, obtained from a public GitHub repository that mirrors it (`trinidadBorrell/manifold-persona`, `docs/papers/2604.17031.pdf`; pdfinfo Title/Author fields match). Text extracted with pdftotext to `/tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/dl/paper_2604.17031.txt`. Page numbers below are the PDF's printed page numbers.
+- The paper text audited here is the **arXiv v2 PDF (stamped "arXiv:2604.17031v2 [cs.CL] 12 May 2026", 27 pages, Creator "arXiv GenPDF")**, obtained from a public GitHub repository that mirrors it (`trinidadBorrell/manifold-persona`, `docs/papers/2604.17031.pdf`; pdfinfo Title/Author fields match). Text extracted with pdftotext to `scratchpad/dl/paper_2604.17031.txt`. Page numbers below are the PDF's printed page numbers.
 - A **v3 exists** (arXiv replace announcement Thu 10 Sep 2026, via the `ehijano/rss_fetch` cs.CL mirror). The v3 abstract is byte-identical to the v1 and v2 abstracts. **I could not read v3's body**; any wording below could differ in v3.
 - Secondary corroboration: the authors' own experiment repo `github.com/bepierre/where-is-the-mind-mini-experiments` (cited in the paper's footnote 11; cloned, last commit 2026-04-14), Beckmann's homepage repo `bepierre/bepierre.github.io`, Gilg et al.'s `oscar-gilg/probing-persona-preferences` (references.bib), and the arXiv-digest mirrors `TengJiao33/ArXiv_Daily_Digest` and `qhduan/cn-chat-arxiv`.
 
 ## 1. Bibliographic facts
 
 - **Title:** Where is the Mind? Persona Vectors and LLM Individuation.
-- **Authors / affiliations (p.1):** "Pierre Beckmann 1,2 and Patrick Butlin 3 — 1 MATS; 2 EPFL & Idiap Research Institute; 3 Eleos AI Research". Contact pierrebeckmann@gmail.com.
+- **Authors / affiliations (p.1):** "Pierre Beckmann 1,2 and Patrick Butlin 3 — 1 MATS; 2 EPFL & Idiap Research Institute; 3 Eleos AI Research". Contact (address in the source).
 - **Dates / versions:** v1 submitted 2026-04-18 15:29:12 UTC (digest mirror; announced on the cs.CL feed 2026-04-21); v2 dated 12 May 2026 (PDF stamp); v3 announced 10 Sep 2026 (rss mirror). Header on p.1: "April 2026 — Research Article in the Philosophy of AI". Categories cs.CL, cs.AI; licence CC BY 4.0.
 - **Venue / status:** arXiv preprint. The author's homepage (bepierre.github.io, news item "Jul 2026") lists it as "*Ergo*, forthcoming" and says it "was covered in the New York Times" (NYT 2026-07-05). So: peer-reviewed acceptance at Ergo is claimed by the author's site; **I could not independently verify the Ergo acceptance** (the paper itself and arXiv metadata do not state it). Gilg et al. (NeurIPS 2026 per the homepage) cite it as arXiv:2604.17031.
 - **Nature of paper:** primarily a philosophy-of-mind / conceptual paper that synthesises mech-interp literature. Its own empirical content is "two preliminary experiments" (sec. 3.4, pp.17–19).

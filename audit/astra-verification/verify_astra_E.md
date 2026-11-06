@@ -210,4 +210,4 @@ Verified 2026-11-05 against the audit file `a00a1bfa-seven-lenses-evidence-audit
 | 12 | Nguyen et al. EMNLP 2026 | A (+C) | Supported; rate is 25.3% (not 27.3%) | — |
 | 13 | Van der Ben et al. 2606.26987 | A | Supported exactly | Add arXiv ID; ETH page inaccessible |
 
-Local copies of the primary texts read: `/tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/hf_0.md` (Reichman), `hf_1.md` (SPASM), `hf_2.md` (Vetter), `hf_3.md` (Nguyen); Mazeika, Van der Ben and Han abstract text are in the tool transcript only.
+Local copies of the primary texts read: `scratchpad/hf_0.md` (Reichman), `hf_1.md` (SPASM), `hf_2.md` (Vetter), `hf_3.md` (Nguyen); Mazeika, Van der Ben and Han abstract text are in the tool transcript only.

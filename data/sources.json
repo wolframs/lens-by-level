@@ -126,7 +126,7 @@
   },
   {
    "tag": "own probe",
-   "html": "Siener, Oct 2026. Emotion-vector projections at the first token and at assistant turn onset, one prompt, one small open-weight model; the model is not recorded in the thread. Unpublished."
+   "html": "Siener, Oct 2026. Emotion-vector projections at the first token and at assistant turn onset, one prompt, one small open-weight model; the model is not recorded in the conversation. Unpublished."
   },
   {
    "tag": "architecture",

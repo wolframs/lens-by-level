@@ -2,7 +2,7 @@
 
 Scope: audit file `a00a1bfa-seven-lenses-evidence-audit.md`, §3 "Self-report" (four cells), the paragraph "What would justify access?", "What changes the picture" item 2, and the reference list entries [Atkinson], [AtkinsonSite], [Tang], [Workspace], [Ferrara], [Singh], [SinghVenue], [Chua].
 
-Access notes (2026-11-05). Blocked in this session: arxiv.org, transformer-circuits.pub, iii.baulab.info, shauli-ravfogel.netlify.app, colm.cc, huggingface.co (web), nyudatascience.medium.com, alphaxiv.org, paperswithcode.co, lesswrong.com. Working: the Hugging Face papers mirror (`hf://papers/<id>/paper.md`, which serves one arXiv HTML version each, with a "Published Time" header), raw.githubusercontent.com, github.com issue pages, and WebSearch snippets. Full mirror texts were saved under `/tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/papers/` (atkinson.md, ferrara.md, singh.md, gurnee.md, chua.md). Quotes below are from those files unless marked "search snippet" or "GitHub README".
+Access notes (2026-11-05). Blocked in this session: arxiv.org, transformer-circuits.pub, iii.baulab.info, shauli-ravfogel.netlify.app, colm.cc, huggingface.co (web), nyudatascience.medium.com, alphaxiv.org, paperswithcode.co, lesswrong.com. Working: the Hugging Face papers mirror (`hf://papers/<id>/paper.md`, which serves one arXiv HTML version each, with a "Published Time" header), raw.githubusercontent.com, github.com issue pages, and WebSearch snippets. Full mirror texts were saved under `scratchpad/papers/` (atkinson.md, ferrara.md, singh.md, gurnee.md, chua.md). Quotes below are from those files unless marked "search snippet" or "GitHub README".
 
 Verdict key: SUPPORTED / PARTLY / NOT SUPPORTED / COULD NOT ACCESS.
 

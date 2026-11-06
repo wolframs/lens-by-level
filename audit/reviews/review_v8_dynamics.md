@@ -2,7 +2,7 @@
 
 Scope: the four Dynamics cells, their group header and row label, the notes paragraph ("The dynamics row is the one psychology would claim"), the pattern bullet ("The dynamics row is fully populated"), the changelog item ("A dynamics row (v8)"), and the source entry "Macar 26". Checked against the full text of Macar et al. 2026 (arXiv 2603.21396, v3 HTML) and the arXiv v1 text of the Anthropic emotions paper (2604.07729), plus the existing audit of the latter. Screenshot v8-fig-light.png viewed.
 
-Page: /home/user/lens-matrix/lens-by-level.html (row at lines 114–121; notes 163; bullet 169; changelog 176; source 211).
+Page: lens-by-level.html (row at lines 114–121; notes 163; bullet 169; changelog 176; source 211).
 
 ---
 

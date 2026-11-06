@@ -1,6 +1,6 @@
 # Hostile review of "Six lenses on five levels of a language model", v3 (4 Nov 2026)
 
-Reviewed: `/home/user/lens-matrix/lens-by-level.html` (whole file) and the light/dark screenshots, against the six audit files in the scratchpad. Cells are named row × column, e.g. Self-report × Runstance. Severity: HIGH = would be called out on X or misstates a source; MEDIUM = overclaims or inconsistent, fix before posting; LOW = polish.
+Reviewed: `lens-by-level.html` (whole file) and the light/dark screenshots, against the six audit files in the scratchpad. Cells are named row × column, e.g. Self-report × Runstance. Severity: HIGH = would be called out on X or misstates a source; MEDIUM = overclaims or inconsistent, fix before posting; LOW = polish.
 
 Headline verdict: the grid is mostly faithful to the audits, but five things will get pounced on: (1) the Self-report × Runstance cell misquotes the Assistant Axis case study; (2) the Birch cell drops half of Birch's position, which the page's own changelog states correctly; (3) the blackmail numbers come from an unreleased Sonnet 4.5 snapshot and the page says "Sonnet 4.5 only"; (4) two cells flatly contradict each other on who integrates over the conversation; (5) the middle-tier blue fails body-text contrast in both themes.
 

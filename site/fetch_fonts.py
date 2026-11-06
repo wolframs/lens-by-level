@@ -13,6 +13,7 @@ out = root / 'fonts'
 CSS = ('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600'
        '&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500'
        '&family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap')
+LICENSES = ['ibmplexsans', 'ibmplexserif', 'ibmplexmono', 'hankengrotesk', 'jetbrainsmono']  # google/fonts ofl/ dirs
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
 
 def get(url):
@@ -35,6 +36,9 @@ def main():
         name = names[url]
         kept.append(f'/* {subset} */\n' + block.replace(url, name))
     (out / 'fonts.css').write_text('/* Vendored by site/fetch_fonts.py from Google Fonts (SIL Open Font License). */\n' + '\n'.join(kept) + '\n')
+    # The OFL requires its text to travel with the fonts: one file per family, as published by Google Fonts.
+    for d in LICENSES:
+        (out / f'OFL-{d}.txt').write_bytes(get(f'https://raw.githubusercontent.com/google/fonts/main/ofl/{d}/OFL.txt'))
     print('fonts:', len(kept), 'faces,', sum(f.stat().st_size for f in out.glob('*.woff2')) // 1024, 'KB')
 
 if __name__ == '__main__': main()

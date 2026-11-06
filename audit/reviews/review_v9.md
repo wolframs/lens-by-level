@@ -1,6 +1,6 @@
 # Review of v9 (5 Nov 2026) — hostile but fair
 
-Scope: `/home/user/lens-matrix/data/board.json`, `sources.json`, `trail.json`, `notes.html`, the rendered `lens-by-level.html`, and the screenshot `shots/v9-fig-light.png` (plus the dark and 400-px shots), checked against the five verifier reports `verify_astra_A–E.md`, the earlier `audit_*.md`, the local emotions-paper text, the v8 hand-built page (`v8_hand.html`) and the external audit as a claim list. I did not fix anything.
+Scope: `data/board.json`, `sources.json`, `trail.json`, `notes.html`, the rendered `lens-by-level.html`, and the screenshot `shots/v9-fig-light.png` (plus the dark and 400-px shots), checked against the five verifier reports `verify_astra_A–E.md`, the earlier `audit_*.md`, the local emotions-paper text, the v8 hand-built page (`v8_hand.html`) and the external audit as a claim list. I did not fix anything.
 
 Severity scale: **HIGH** = a reader who checks the source will find the board wrong; **MED** = overstated, unhedged or inconsistent with the board's own rule; **LOW** = wording a careful reader would pounce on but that does not mislead.
 

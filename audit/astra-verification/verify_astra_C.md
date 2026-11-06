@@ -106,4 +106,4 @@ Version bookkeeping flags:
 5. **Macar**: PMLR lists "Zifan Wang" where arXiv lists "Atticus Wang".
 6. **Chalmers Inquiry DOI, Kirkpatrick/Radulescu/Sterken DOI, Singh COLM 2026, B&B v3 Sept 2026 + Ergo forthcoming, Lu ICML 2026/PMLR 306**: all consistent with evidence, but none reached above snippet level because the hosts are blocked in this session.
 
-Local artifacts: Gilg repo clone and extracted PDF text at /tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/dl/gilg (paper/preprint.tex, preprint.pdf) and /tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/dl/gilg_preprint.txt; B&B repo at .../dl/bb.
+Local artifacts: Gilg repo clone and extracted PDF text at scratchpad/dl/gilg (paper/preprint.tex, preprint.pdf) and scratchpad/dl/gilg_preprint.txt; B&B repo at .../dl/bb.

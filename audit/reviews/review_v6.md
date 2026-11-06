@@ -1,6 +1,6 @@
 # Hostile review, round three: "Six lenses on four levels of a language model", v6 (4 Nov 2026)
 
-Reviewed: `/home/user/lens-matrix/lens-by-level.html` (whole file), the three v6 screenshots (`v6-fig-light.png`, `v6-fig-dark.png`, `v6-light-1240.png`), `review_v3.md`, `review_v4.md`, and the seven audit files as ground truth. Cells are named row × column. Severity: HIGH = misstates a source or will be called out on X; MEDIUM = overclaims, inconsistent, or wrong by the page's own rule; LOW = polish.
+Reviewed: `lens-by-level.html` (whole file), the three v6 screenshots (`v6-fig-light.png`, `v6-fig-dark.png`, `v6-light-1240.png`), `review_v3.md`, `review_v4.md`, and the seven audit files as ground truth. Cells are named row × column. Severity: HIGH = misstates a source or will be called out on X; MEDIUM = overclaims, inconsistent, or wrong by the page's own rule; LOW = polish.
 
 Headline verdict: the restructure is sound and most of v4's residue is gone (dark ramp excepted). But the new machinery introduced four real errors: one tag on the figure says, by the page's own grammar, that Lindsey 25 is contested by Macar 26 (Macar is Lindsey's own follow-up with Lindsey as senior author); the closed Hedonic × Runstance cell asserts as its headline the one thing the emotions paper explicitly leaves open and contradicts the architecture cell two rows up; the subject strip and notes misplace Birch's shoggoth and miscount Beckmann & Butlin's candidates; and the "+" rule is applied to one cell and not to another with the same structure.
 

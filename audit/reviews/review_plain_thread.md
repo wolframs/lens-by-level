@@ -1,6 +1,6 @@
 # Review: plain.html and the six-post thread
 
-Materials read in full: `/home/user/lens-by-level/plain.html`, `/home/user/lens-by-level/share/thread.md`, `share/post-1.png` to `post-6.png` (viewed), `data/board.json`, `data/sources.json`, `data/notes.html`. Cross-checked against `frame.html`, `README.md`, `data/trail.json`, the Astra audit as received, the emotions-paper audit (`audit_anthropic_emotions.md`), the v8 dynamics review (`review_v8_dynamics.md`), the Beckmann & Butlin audit, the local full text of the emotions paper (`paper_2604.07729.txt`) and of Beckmann & Butlin (`bb/bb.txt`).
+Materials read in full: `plain.html`, `share/thread.md`, `share/post-1.png` to `post-6.png` (viewed), `data/board.json`, `data/sources.json`, `data/notes.html`. Cross-checked against `frame.html`, `README.md`, `data/trail.json`, the Astra audit as received, the emotions-paper audit (`audit_anthropic_emotions.md`), the v8 dynamics review (`review_v8_dynamics.md`), the Beckmann & Butlin audit, the local full text of the emotions paper (`paper_2604.07729.txt`) and of Beckmann & Butlin (`bb/bb.txt`).
 
 ---
 

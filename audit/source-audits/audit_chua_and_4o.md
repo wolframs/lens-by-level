@@ -16,8 +16,8 @@ HF mirror of the arXiv HTML; quotes marked [SNIPPET] are verbatim text returned 
 ### Bibliographic facts
 - Authors (verified from paper header and HF metadata): **James Chua, Jan Betley, Samuel Marks, Owain Evans**.
   Affiliations per paper header [PAPER]: "James Chua ... Jan Betley Affiliation: Truthful AI Samuel Marks
-  Affiliation: Anthropic Owain Evans Affiliation: Truthful AI". Correspondence: chuajamessh@gmail.com,
-  owaine@gmail.com. (So the "Evans?" in the brief is confirmed; Marks is at Anthropic, the other three at
+  Affiliation: Anthropic Owain Evans Affiliation: Truthful AI". Correspondence: (address in the source),
+  (address in the source). (So the "Evans?" in the brief is confirmed; Marks is at Anthropic, the other three at
   Truthful AI.)
 - arXiv ID 2604.13051 (= April 2026 arXiv submission by ID convention). **Exact arXiv submission date NOT
   verified** (arxiv.org blocked). HF Papers metadata lists `publishedAt: 2026-03-17`; the LessWrong post is

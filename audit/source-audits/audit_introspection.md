@@ -131,5 +131,5 @@ Also relevant (not counted in the five): Pearson-Vogel, Vanek, Douglas & Kulveit
 - Hosts that would need to be allowed to close these gaps: arxiv.org (or export.arxiv.org), transformer-circuits.pub, alphaxiv.org, api.semanticscholar.org.
 
 ## 5. Local files
-- Anthropic post text: /tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/dl/anthropic_introspection.txt
-- Lindsey paper text (arXiv 2601.01828 via HF mirror, images stripped): /tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/dl/lindsey_clean.md
+- Anthropic post text: scratchpad/dl/anthropic_introspection.txt
+- Lindsey paper text (arXiv 2601.01828 via HF mirror, images stripped): scratchpad/dl/lindsey_clean.md

@@ -217,6 +217,6 @@ To resolve 1–3, allow arxiv.org, philpapers.org, philarchive.org, osf.io and l
 
 ## Local artifacts
 
-- B&B v2 text: `/tmp/claude-0/-home-user/6e393e2b-f94c-5db4-9915-1371368ee380/scratchpad/bb/bb.txt` (from `/home/user/trinidadborrell/manifold-persona/docs/papers/2604.17031.pdf`)
-- Gilg et al. LaTeX source: `/home/user/oscar-gilg/probing-persona-preferences/paper/preprint.tex` (+ `references.bib`, `preprint.pdf`)
-- Secondary reading notes: `/home/user/winemaster/claudes-research/notes/chalmers-2026-interlocutors.md`, `/home/user/winemaster/claudes-research/notes/welfare-individuation-2026.md`, `/home/user/winemaster/claudes-research/essays/006-a-pause-for-whom.md`
+- B&B v2 text: `scratchpad/bb/bb.txt` (from `github.com/trinidadborrell/manifold-persona/docs/papers/2604.17031.pdf`)
+- Gilg et al. LaTeX source: `github.com/oscar-gilg/probing-persona-preferences/paper/preprint.tex` (+ `references.bib`, `preprint.pdf`)
+- Secondary reading notes: `github.com/winemaster/claudes-research/notes/chalmers-2026-interlocutors.md`, `github.com/winemaster/claudes-research/notes/welfare-individuation-2026.md`, `github.com/winemaster/claudes-research/essays/006-a-pause-for-whom.md`
