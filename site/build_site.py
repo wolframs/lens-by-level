@@ -42,6 +42,14 @@ def relink(s):
     for aid,slug in ART.items():
         s=s.replace(f'https://claude.ai/artifact/{aid}',f'../{slug}/')
     return s
+NAV=[('','Lens by Level'),('ledger','Ledger'),('plain','In plain words'),('frame','Frame'),('thread','Thread'),('board','Full board')]
+def navbar(slug):
+    """A thin bar over the artifact pages, which were written to stand alone and link nowhere else on the site."""
+    items=''.join(f'<b aria-current="page">{t}</b>' if s==slug else f'<a href="../{s+"/" if s else ""}">{t}</a>' for s,t in NAV)
+    return ('<nav class="lbl-nav" aria-label="Lens by Level">'+items+'</nav>\n'
+            '<style>.lbl-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;margin:0 0 22px;padding:0 0 12px;border-bottom:1px solid rgba(128,128,128,.25);'
+            'font:500 13px/1.5 "IBM Plex Sans",system-ui,sans-serif}.lbl-nav a{color:inherit;opacity:.7;text-decoration:none}'
+            '.lbl-nav a:hover{opacity:1;text-decoration:underline}.lbl-nav b{font-weight:600}</style>\n')
 def thread_page(d):
     posts=''.join(
         f'<article class="p" id="p{p["n"]}"><div class="m"><span>{p["n"]}/{len(d["posts"])}</span>'
@@ -77,7 +85,7 @@ def index_page():
 body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.55;padding:48px max(16px,env(safe-area-inset-left,0px)) 64px max(16px,env(safe-area-inset-right,0px))}
 .w{max-width:760px;margin:0 auto} h1{font-size:34px;line-height:1.15;margin:0 0 10px} .lede{color:var(--ink2);margin:0 0 30px;font-size:19px}
 .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px} a.c{display:block;background:var(--sf);border:1px solid var(--hair);border-radius:12px;padding:16px 18px;color:var(--ink);text-decoration:none}
-a.c b{display:block;font-size:18px;margin-bottom:4px} a.c span{color:var(--ink2);font-size:15px} a.c:hover{border-color:var(--acc)} .f{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink3);margin-top:36px}
+a.c b{display:block;font-size:18px;margin-bottom:4px} a.c span{color:var(--ink2);font-size:15px} a.c:hover{border-color:var(--acc)} .f{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink3);margin-top:36px} .f a{color:var(--acc)}
 img{display:block;border-radius:10px;margin:0 0 28px;border:1px solid var(--hair)}
 </style>
 <div class="w"><h1>Lens by Level</h1><p class="lede">Seven ways of looking at a language model, graded by evidence across four levels of description, with every source and every correction on the record.</p>
@@ -96,7 +104,7 @@ def main():
     dist=root/'site'/'dist'
     if dist.exists(): shutil.rmtree(dist)
     for slug,f in PAGES:
-        (dist/slug).mkdir(parents=True); (dist/slug/'index.html').write_text(wrap(relink((root/f).read_text()),slug,o.url))
+        (dist/slug).mkdir(parents=True); (dist/slug/'index.html').write_text(wrap(navbar(slug)+relink((root/f).read_text()),slug,o.url))
     d=json.load(open(root/'thread'/'thread.json'))
     (dist/'thread'/'img').mkdir(parents=True)
     for p in d['posts']:
