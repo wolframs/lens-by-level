@@ -88,7 +88,7 @@ body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-u
 a.c b{display:block;font-size:18px;margin-bottom:4px} a.c span{color:var(--ink2);font-size:15px} a.c:hover{border-color:var(--acc)} .f{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--ink3);margin-top:36px} .f a{color:var(--acc)}
 img{display:block;border-radius:10px;margin:0 0 28px;border:1px solid var(--hair)}
 </style>
-<div class="w"><h1>Lens by Level</h1><p class="lede">Seven ways of looking at a language model, graded by evidence across four levels of description, with every source and every correction on the record.</p>
+<div class="w"><h1>Lens by Level</h1><p class="lede">Why is talking about AI so hard? Every claim about AI is about “it”, and “it” can mean at least four different things, if not more: the trained model, one conversation, one reply, or the single step that picks the next word. Here are seven ways of looking at each, graded by the published evidence, with every source and every correction on the record.</p>
 <img src="og.png" alt="“It’s just predicting the next token” sits in the one-step column, “my 4o had a personality” in the trained-model column: both can be right, about different objects">
 <div class="g">
 <a class="c" href="ledger/"><b>The ledger</b><span>The board. Click any cell for its sources, grade and history.</span></a>
