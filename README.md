@@ -56,4 +56,5 @@ Wolfram Siener with Claude (Fable 5.1, then Opus 5.5). Levels after Siener's run
 ## Publishing
 
 - **X data:** request your archive from X, then `python3 thread/ingest_x_archive.py PATH_TO_ARCHIVE --root FIRST_POST_ID`. The export has no view counts and no other people's replies; add those with `--extra extra.json` (`{"metrics": {"1": {"views": 1234}}, "replies": [{"author": "@x", "text": "...", "url": "..."}]}`).
-- **Website:** `python3 build.py && python3 build_ledger.py && python3 site/build_site.py`, then upload `site/dist/`. Use `--base /lens-by-level/` if it lives under a subpath and `--url` with its public address for link previews. Fonts are served from `site/fonts/` (refresh with `site/fetch_fonts.py`); no page loads anything from a third party.
+- **wsiener.dev:** the site renders the board from `data/`, the two hand-written pages and `thread/thread.json`; after a change here, run `node scripts/sync-lens-by-level.mjs` in the wsiener.dev checkout.
+- **Standalone site:** `python3 build.py && python3 build_ledger.py && python3 site/build_site.py`, then upload `site/dist/`. Use `--base /lens-by-level/` if it lives under a subpath and `--url` with its public address for link previews. Fonts are served from `site/fonts/` (refresh with `site/fetch_fonts.py`); no page loads anything from a third party.
