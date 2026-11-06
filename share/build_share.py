@@ -56,6 +56,14 @@ body{margin:0;background:#777;font-family:var(--font);color:var(--ink)}
 .tree .tr.d{color:var(--ink);font-weight:500;margin-top:6px}
 .tree .tr.d .n{color:#a33f12}
 .tree .nt{display:none}
+/* lead image: post 3's two cells over the board, the caption set as a block */
+.lead-row{display:flex;gap:64px;align-items:stretch}
+.lead-row>div:first-child{flex:none!important}
+.lead-cap{flex:1;display:flex;flex-direction:column}
+.lead-cap .say{margin:auto 0;padding-left:28px;border-left:4px solid var(--acc)}
+.lead-cap .say b{display:block;font-family:var(--display);font-size:48px;font-weight:600;line-height:1.1;letter-spacing:-.015em;color:var(--ink)}
+.lead-cap .say span{display:block;margin-top:16px;font-size:34px;line-height:1.25;color:var(--ink-2)}
+.lead-cap .sign{font-family:var(--mono);font-size:19px;color:var(--ink-3);text-align:right}
 '''
 def card(n,body,sig='@wolframs91 · Lens by Level'):
     return f'<section class="card" id="c{n}">{body}</section>'
@@ -146,6 +154,15 @@ for d,note in _groups:
 _stats=[(str(len(_ax)),'papers in the audit trail'),(str(len(_src)),'cited on the board'),(str(_refs),'references in an outside GPT-6 audit'),(str(_nrev),'review rounds'),(f'{_tot:,}','words of receipts')]
 c6='<p class="ttl" style="font-size:44px;margin:0 0 30px">Models from two labs, reading in parallel and checking each other.</p><div class="stats">'+''.join(f'<div><b>{a}</b><span>{esc(z)}</span></div>' for a,z in _stats)+'</div><div class="tree">'+_rows+'</div>'
 
-cards=[card(1,c1),card(2,"<img src='../lens-board-lean.png' style='max-height:788px;max-width:100%;display:block;margin:0 auto' alt='the board'>"),card(3,c3),card(4,c4),card(5,c5),card(6,c6)]
+# ---------- lead: post 3, for the website's head and link previews. Not posted;
+# post-3.png stays the image that went out with the thread.
+lead='''
+<div class="cells">
+ <div class="cell"><span class="lbl">“it’s just predicting the next token”</span><b>One symbol per step, in ordinary sampling</b><i>Autoregressive sampling commits one symbol per step; prefill scores many positions at once and speculative decoding verifies several drafts per call.</i><u>right column · one step · architectural fact</u></div>
+ <div class="cell"><span class="lbl">“my 4o had a personality”</span><b>Mourning a model, measured</b><i>After the GPT-5 rollout removed 4o from ChatGPT, negative posts rose about 13 points. What exactly people were attached to is still open.</i><u>left column · the trained model · Nature Human Behaviour, CHI</u></div>
+</div>
+<div class="lead-row"><div id="emph" style="flex:1"></div><div class="lead-cap"><p class="say"><b>Both can be right.</b><span>They are not about<br>the same object.</span></p><p class="sign">Lens by Level · wsiener.dev</p></div></div>'''
+
+cards=[card(1,c1),card(2,"<img src='../lens-board-lean.png' style='max-height:788px;max-width:100%;display:block;margin:0 auto' alt='the board'>"),card(3,c3),card(4,c4),card(5,c5),card(6,c6),card('lead',lead)]
 page='<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>'+CSS+'</style></head><body>'+''.join(cards)+'</body></html>'
 open(root/'share/thread.html','w').write(page); print('share/thread.html',len(page))

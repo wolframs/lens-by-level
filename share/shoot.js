@@ -1,6 +1,8 @@
-// Render share/post-N.png (1600×900). Usage: node share/shoot.js [theme]. With a theme, the board images are recoloured to match.
+// Render share/post-N.png and share/lead.png (1600×900). Usage: node share/shoot.js [theme] [card ...].
+// With a theme, the board images are recoloured to match. Card names (1…6, lead) render only those:
+// the posted images stay as they went out, so `node share/shoot.js midnight lead` touches the lead alone.
 const { chromium } = require('playwright'); const fs=require('fs'); const path=require('path');
-const theme=process.argv[2]||'';
+const theme=process.argv[2]||''; const only=process.argv.slice(3);
 const LEDGER_VARS={midnight:{css:`:root{--bg:#0e1320!important;--surface:#141b2b!important;--ink:#eef2f8!important;--ink-2:#b4bdcc!important;--ink-3:#7e889b!important;--hair:#212a3b!important;--rule:#36425c!important;--t3:#aed6ff!important;--t2:#5b97da!important;--t1:#2b5689!important;--on-t3:#0b1220!important;--on-t2:#0b1220!important;--on-t1:#eef2f8!important;--focus:#ffb54d!important;--font:"Hanken Grotesk",system-ui,sans-serif!important;--mono:"JetBrains Mono",ui-monospace,monospace!important;color-scheme:dark}`,
   fonts:'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap',acc:'#ffb54d',onAcc:'#1a1205',bg:'#0e1320',hair:'#212a3b'}};
 (async()=>{
@@ -23,10 +25,11 @@ const LEDGER_VARS={midnight:{css:`:root{--bg:#0e1320!important;--surface:#141b2b
  // cards
  const src=theme?path.join(root,'share','themes',theme,'thread.html'):path.join(root,'share','thread.html');
  let html=fs.readFileSync(src,'utf8'); const b64=f=>'data:image/png;base64,'+fs.readFileSync(f).toString('base64');
- html=html.replace(/<div id="emph"[^>]*><\/div>/,`<div style="flex:1"><img src="${b64(emph)}" style="max-height:500px;max-width:100%;border:1px solid ${hair};border-radius:8px;display:block" alt="board with two cells highlighted"></div>`);
+ html=html.replaceAll(/<div id="emph"[^>]*><\/div>/g,`<div style="flex:1"><img src="${b64(emph)}" style="max-height:500px;max-width:100%;border:1px solid ${hair};border-radius:8px;display:block" alt="board with two cells highlighted"></div>`);
  html=html.replace(/src='\.\.\/lens-board-lean\.png' style='[^']*'/,`src="${b64(lean)}" style="max-height:788px;max-width:100%;display:block;margin:0 auto;border-radius:8px"`);
  ctx=await br.newContext({viewport:{width:1700,height:1000}}); p=await ctx.newPage();
  await p.setContent(html,{waitUntil:'networkidle'}); await p.evaluate(()=>document.fonts.ready);
- for(let i=1;i<=6;i++){const el=await p.$('#c'+i); await el.screenshot({path:path.join(root,'share',`post-${i}.png`)});}
- await br.close(); fs.unlinkSync(emph); fs.unlinkSync(lean); console.log('rendered 6 cards', theme||'(base)');
+ const names=only.length?only:['1','2','3','4','5','6','lead'];
+ for(const n of names){const el=await p.$('#c'+n); await el.screenshot({path:path.join(root,'share',n==='lead'?'lead.png':`post-${n}.png`)});}
+ await br.close(); fs.unlinkSync(emph); fs.unlinkSync(lean); console.log('rendered', names.join(' '), theme||'(base)');
 })();

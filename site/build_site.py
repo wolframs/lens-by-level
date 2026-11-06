@@ -35,7 +35,7 @@ def wrap(fragment, slug, url=''):
     if url:
         meta+=(f'<link rel="canonical" href="{esc(url+(slug+"/" if slug else ""))}">\n<meta property="og:url" content="{esc(url+(slug+"/" if slug else ""))}">\n'
                f'<meta property="og:image" content="{esc(url)}og.png">\n<meta property="og:image:width" content="1600">\n<meta property="og:image:height" content="900">\n'
-               '<meta property="og:image:alt" content="Two claims about AI, and the four things the word it can mean">\n')
+               '<meta property="og:image:alt" content="Two claims about AI on the board: both can be right, about different objects">\n')
     return ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
             +meta+'<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>\n</head>\n<body>\n'+fragment+'\n</body>\n</html>\n')
 def relink(s):
@@ -89,7 +89,7 @@ a.c b{display:block;font-size:18px;margin-bottom:4px} a.c span{color:var(--ink2)
 img{display:block;border-radius:10px;margin:0 0 28px;border:1px solid var(--hair)}
 </style>
 <div class="w"><h1>Lens by Level</h1><p class="lede">Seven ways of looking at a language model, graded by evidence across four levels of description, with every source and every correction on the record.</p>
-<img src="thread/img/post-1.png" alt="Two claims about AI, and the four things the word it can mean">
+<img src="og.png" alt="“It’s just predicting the next token” sits in the one-step column, “my 4o had a personality” in the trained-model column: both can be right, about different objects">
 <div class="g">
 <a class="c" href="ledger/"><b>The ledger</b><span>The board. Click any cell for its sources, grade and history.</span></a>
 <a class="c" href="plain/"><b>In plain words</b><span>The short version, no jargon.</span></a>
@@ -111,7 +111,7 @@ def main():
         if p.get('image'): shutil.copy(root/'share'/p['image'],dist/'thread'/'img'/p['image'])
     (dist/'thread'/'index.html').write_text(wrap(thread_page(d),'thread',o.url))
     (dist/'index.html').write_text(wrap(index_page(),'',o.url))
-    shutil.copytree(root/'site'/'fonts',dist/'fonts'); shutil.copy(root/'share'/'post-1.png',dist/'og.png')
+    shutil.copytree(root/'site'/'fonts',dist/'fonts'); shutil.copy(root/'share'/'lead.png',dist/'og.png')
     if o.base:
         for f in dist.rglob('index.html'):
             s=f.read_text(); f.write_text(s.replace('<head>\n',f'<head>\n<base href="{o.base}{f.parent.relative_to(dist).as_posix()+"/" if f.parent!=dist else ""}">\n',1))

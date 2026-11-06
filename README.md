@@ -4,7 +4,7 @@ Seven ways of looking at a language model, graded by evidence across four levels
 
 **Read it at [wsiener.dev/lens-by-level](https://wsiener.dev/lens-by-level/)**: the [ledger](https://wsiener.dev/lens-by-level/ledger/) (click any cell for its sources, grade and history), the [plain-language version](https://wsiener.dev/lens-by-level/plain/), the [frame](https://wsiener.dev/lens-by-level/frame/) and the [thread](https://wsiener.dev/lens-by-level/thread/).
 
-![Two claims about AI, "It's just predicting the next token" and "My 4o had a real personality", sit on different things the word "it" can mean: the trained model, one conversation, one reply, one step](share/post-1.png)
+![Two claims about AI on the board: "it's just predicting the next token" is a cell in the one-step column, "my 4o had a personality" one in the trained-model column. Both can be right; they are not about the same object.](share/lead.png)
 
 Why is talking about AI so hard? Every claim about AI is about "it", and "it" can mean the trained model, one conversation, one reply, or the single step that picks the next word. Most arguments are two people talking about different ones without noticing. The board crosses those four levels with seven ways of looking and grades what the published evidence can say in each cell.
 
@@ -23,7 +23,7 @@ The board grades what each lens (mechanistic interpretation, behaviour, self-rep
 | `build_ledger.py` | renders `ledger.html`, the lean board with a drawer per cell, a sources view and the notes |
 | `frame.html` | the essay around the board: columns, the persona slice, the tier rule, ecology as frame, the experiments that would settle open cells, how it was made |
 | `plain.html` | the plain-language version: the one idea, six findings, what the shading is not |
-| `share/` | the six thread cards (`post-N.png`), their generator, and the pre-posting draft of the thread text |
+| `share/` | the six thread cards (`post-N.png`) as posted, `lead.png` (post 3 reworked as the website's lead image), their generator, and the pre-posting draft of the thread text |
 | `audit/source-audits/` | what each original source was found to say, read by one auditor per source |
 | `audit/astra-verification/` | an external audit by another lab's model, as received, and the five verification reports on its sources |
 | `audit/reviews/` | the hostile reviews of each version and what they found, including the lay-reader and fact-check review of the plain page and thread |

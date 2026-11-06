@@ -15,7 +15,7 @@ Read `docs/how-this-was-made.md` first. It explains the project's history, how W
 ## Pieces
 
 - `build.py` → `lens-by-level.html` (full board) · `build_ledger.py` → `ledger.html` · `frame.html`, `plain.html` (hand-written)
-- `share/`: thread images. `python3 share/build_share.py && python3 share/render_themes.py && node share/shoot.js midnight`
+- `share/`: thread images and the website's lead image. `python3 share/build_share.py && python3 share/render_themes.py && node share/shoot.js midnight lead` (name the cards to render; the posted `post-N.png` stay as they went out). Needs `npm i --no-save playwright && npx playwright install chromium-headless-shell` once.
 - `thread/`: the posted thread as data, screenshots, and `ingest_x_archive.py` for the X export
 - `site/build_site.py` → `site/dist/`, a static site ready to upload (`--base /path/` if it isn't served at the domain root)
 - `.claude/skills/twitter-thread-images/`: the reusable skill for future threads
